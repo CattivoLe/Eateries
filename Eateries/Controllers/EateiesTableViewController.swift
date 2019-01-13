@@ -14,6 +14,8 @@ class EateiesTableViewController: UITableViewController {
     
     let restaurantImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "dastarhan.jpg", "indokitay.jpg", "x.o.jpg", "balkan.jpg", "respublika.jpg", "speakeasy.jpg", "morris.jpg", "istorii.jpg", "klassik.jpg", "love.jpg", "shok.jpg", "bochka.jpg"]
     
+    var restoranVisited = [Bool](repeating: false, count: 15)
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -34,6 +36,7 @@ class EateiesTableViewController: UITableViewController {
         cell.thumbnailImageView.layer.cornerRadius = 32.5
         cell.thumbnailImageView.clipsToBounds = true
         cell.nameLabel.text = restaurantNames[indexPath.row]
+        cell.accessoryType = self.restoranVisited[indexPath.row] ? .checkmark : .none
         return cell
     }
     
@@ -48,15 +51,19 @@ class EateiesTableViewController: UITableViewController {
             alertController.addAction(button)
             self.present(alertController, animated: true, completion: nil)
         }
-        let visited = UIAlertAction(title: "Я был сдесь", style: .default) { (action) in
+        
+        let visitedTitle = self.restoranVisited[indexPath.row] ? "Я не был сдесь" : "Я был сдесь"
+        let visited = UIAlertAction(title: visitedTitle, style: .default) { (action) in
             let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
+            self.restoranVisited[indexPath.row] = !self.restoranVisited[indexPath.row]
+            cell?.accessoryType = self.restoranVisited[indexPath.row] ? .checkmark : .none
         }
         allertController.addAction(cancelButtone)
         allertController.addAction(callAction)
         allertController.addAction(visited)
         present(allertController, animated: true, completion: nil)
         
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
