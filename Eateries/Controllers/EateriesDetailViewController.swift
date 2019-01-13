@@ -16,15 +16,17 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     var restourant: Restaurant?
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.hidesBarsOnSwipe = false // Не скрывать по свайпу
         navigationController?.setToolbarHidden(false, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: restourant!.image)
         
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        title = restourant!.name
+        tableView.estimatedRowHeight = 38 // Размер ячейки
+        tableView.rowHeight = UITableView.automaticDimension // Автоматический размер ячейки
+        tableView.tableFooterView = UIView(frame: CGRect.zero) // Скрыть неиспользуемую часть таблицы
+        title = restourant!.name // Заголовок
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +35,7 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesDetailTableViewCell
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear // Прозрачные ячейки
         
         switch indexPath.row {
         case 0:
