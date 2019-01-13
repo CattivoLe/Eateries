@@ -38,17 +38,26 @@ class EateiesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showAllert(index: indexPath.row)
-    }
-    
-    func showAllert(index: Int) {
+        
         let allertController = UIAlertController(title: nil, message: "Выберите действие", preferredStyle: .actionSheet)
         let cancelButtone = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        let callAction = UIAlertAction(title: "Позвонить: +7(495)555 00 0\(index)", style: .default, handler: nil)
+        let callAction = UIAlertAction(title: "Позвонить: +7(495)555 00 0\(indexPath.row)", style: .default) {
+            (action: UIAlertAction) -> Void in
+            let alertController = UIAlertController(title: nil, message: "Вызов не может быть совершен", preferredStyle: .alert)
+            let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(button)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        let visited = UIAlertAction(title: "Я был сдесь", style: .default) { (action) in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+        }
         allertController.addAction(cancelButtone)
         allertController.addAction(callAction)
+        allertController.addAction(visited)
         present(allertController, animated: true, completion: nil)
+        
     }
-
+    
     
 }
