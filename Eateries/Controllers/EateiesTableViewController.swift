@@ -40,26 +40,25 @@ class EateiesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let allertController = UIAlertController(title: nil, message: "Выберите действие", preferredStyle: .actionSheet)
-        let cancelButtone = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        let callAction = UIAlertAction(title: "Позвонить: +7(495)555 00 0\(indexPath.row)", style: .default) {
-            (action: UIAlertAction) -> Void in
-            let alertController = UIAlertController(title: nil, message: "Вызов не может быть совершен", preferredStyle: .alert)
-            let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertController.addAction(button)
-            self.present(alertController, animated: true, completion: nil)
-        }
-        
-        let visitedTitle = self.restoranVisited[indexPath.row] ? "Я не был сдесь" : "Я был сдесь"
-        let visited = UIAlertAction(title: visitedTitle, style: .default) { (action) in
-            let cell = tableView.cellForRow(at: indexPath)
-            self.restoranVisited[indexPath.row] = !self.restoranVisited[indexPath.row]
-            cell?.accessoryType = self.restoranVisited[indexPath.row] ? .checkmark : .none
-        }
-        allertController.addAction(cancelButtone)
-        allertController.addAction(callAction)
-        allertController.addAction(visited)
-        present(allertController, animated: true, completion: nil)
+//        let allertController = UIAlertController(title: nil, message: "Выберите действие", preferredStyle: .actionSheet)
+//        let cancelButtone = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+//        let callAction = UIAlertAction(title: "Позвонить: +7(495)555 00 0\(indexPath.row)", style: .default) {
+//            (action: UIAlertAction) -> Void in
+//            let alertController = UIAlertController(title: nil, message: "Вызов не может быть совершен", preferredStyle: .alert)
+//            let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
+//            alertController.addAction(button)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
+//        let visitedTitle = self.restoranVisited[indexPath.row] ? "Я не был сдесь" : "Я был сдесь"
+//        let visited = UIAlertAction(title: visitedTitle, style: .default) { (action) in
+//            let cell = tableView.cellForRow(at: indexPath)
+//            self.restoranVisited[indexPath.row] = !self.restoranVisited[indexPath.row]
+//            cell?.accessoryType = self.restoranVisited[indexPath.row] ? .checkmark : .none
+//        }
+//        allertController.addAction(cancelButtone)
+//        allertController.addAction(callAction)
+//        allertController.addAction(visited)
+//        present(allertController, animated: true, completion: nil)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -85,6 +84,15 @@ class EateiesTableViewController: UITableViewController {
         delite.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         
         return [delite, share]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let dvc = segue.destination as! EateiesDetailViewController
+                dvc.imageName = self.restaurantImages[indexPath.row]
+            }
+        }
     }
     
     
