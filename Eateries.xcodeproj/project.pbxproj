@@ -12,9 +12,9 @@
 		11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5421EB28AB00E1B151 /* Main.storyboard */; };
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
 		11A0EF5B21EB28AC00E1B151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */; };
-		11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */; };
+		11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */; };
 		11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */; };
-		11A0EF6821EB81E700E1B151 /* EateiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6721EB81E700E1B151 /* EateiesDetailViewController.swift */; };
+		11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */; };
 		11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6921EB90EA00E1B151 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +26,9 @@
 		11A0EF5721EB28AC00E1B151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0EF5A21EB28AC00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A0EF5C21EB28AC00E1B151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateiesTableViewController.swift; sourceTree = "<group>"; };
+		11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewController.swift; sourceTree = "<group>"; };
 		11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
-		11A0EF6721EB81E700E1B151 /* EateiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateiesDetailViewController.swift; sourceTree = "<group>"; };
+		11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailViewController.swift; sourceTree = "<group>"; };
 		11A0EF6921EB90EA00E1B151 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,8 +76,8 @@
 		11A0EF6621EB303B00E1B151 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */,
-				11A0EF6721EB81E700E1B151 /* EateiesDetailViewController.swift */,
+				11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */,
+				11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */,
 				11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */,
 				1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */,
 			);
@@ -156,9 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */,
-				11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */,
+				11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
-				11A0EF6821EB81E700E1B151 /* EateiesDetailViewController.swift in Sources */,
+				11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */,
 				1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */,
 				11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */,
 			);
