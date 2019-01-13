@@ -18,6 +18,9 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: restourant!.image)
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        title = restourant!.name
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,6 +29,8 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesDetailTableViewCell
+        cell.backgroundColor = UIColor.clear
+        
         switch indexPath.row {
         case 0:
             cell.keyLabel.text = "Название"
