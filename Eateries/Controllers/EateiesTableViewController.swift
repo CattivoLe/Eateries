@@ -9,6 +9,12 @@
 import UIKit
 
 class EateiesTableViewController: UITableViewController {
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    // MARK: Model
     
     var restaurantNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
     
@@ -16,14 +22,6 @@ class EateiesTableViewController: UITableViewController {
     
     var restoranVisited = [Bool](repeating: false, count: 15)
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
