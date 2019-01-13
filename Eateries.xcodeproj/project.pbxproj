@@ -14,6 +14,7 @@
 		11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */; };
 		11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */; };
 		11A0EF6821EB81E700E1B151 /* EateiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6721EB81E700E1B151 /* EateiesDetailViewController.swift */; };
+		11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6921EB90EA00E1B151 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateiesTableViewController.swift; sourceTree = "<group>"; };
 		11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
 		11A0EF6721EB81E700E1B151 /* EateiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateiesDetailViewController.swift; sourceTree = "<group>"; };
+		11A0EF6921EB90EA00E1B151 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				11A0EF5421EB28AB00E1B151 /* Main.storyboard */,
 				11A0EF6621EB303B00E1B151 /* Controllers */,
 				11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */,
+				11A0EF6921EB90EA00E1B151 /* Restaurant.swift */,
 				11A0EF5721EB28AC00E1B151 /* Assets.xcassets */,
 				11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */,
 				11A0EF5C21EB28AC00E1B151 /* Info.plist */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */,
 				11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
 				11A0EF6821EB81E700E1B151 /* EateiesDetailViewController.swift in Sources */,
