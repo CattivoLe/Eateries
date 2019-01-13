@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1477.5999999999999" y="135.38230884557723"/>
         </scene>
-        <!--View Controller-->
+        <!--Rate View Controller-->
         <scene sceneID="c2r-qu-A8S">
             <objects>
-                <viewController id="xMO-HZ-mRa" sceneMemberID="viewController">
+                <viewController id="xMO-HZ-mRa" customClass="RateViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="egI-Me-t3x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,15 +204,48 @@
                                     <segue destination="L7N-5Q-b45" kind="unwind" unwindAction="unwindSegueWithSegue:" id="m20-HB-Cxt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как вам у нас?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K13-ds-45Z">
+                                <rect key="frame" x="74" y="168" width="226" height="42.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="226" id="xOq-nr-zlc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                <color key="textColor" red="0.99982637169999999" green="0.99629324669999997" blue="0.98038989310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-ON-2Qo">
+                                <rect key="frame" x="0.0" y="291" width="375" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-kL-vqr">
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="85"/>
+                                        <state key="normal" image="bad"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEA-90-6QF">
+                                        <rect key="frame" x="127.5" y="0.0" width="120" height="85"/>
+                                        <state key="normal" image="good"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pA-jL-Kcq">
+                                        <rect key="frame" x="255.5" y="0.0" width="119.5" height="85"/>
+                                        <state key="normal" image="brilliant"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nCM-ON-2Qo" firstAttribute="centerX" secondItem="i5N-mZ-4Db" secondAttribute="centerX" id="2dM-Dz-zlP"/>
+                            <constraint firstItem="hnq-IE-tmb" firstAttribute="trailing" secondItem="nCM-ON-2Qo" secondAttribute="trailing" id="3lY-GW-bam"/>
                             <constraint firstItem="fWL-e2-pzv" firstAttribute="top" secondItem="hnq-IE-tmb" secondAttribute="top" constant="14" id="7Vh-19-olF"/>
                             <constraint firstItem="hnq-IE-tmb" firstAttribute="bottom" secondItem="i5N-mZ-4Db" secondAttribute="bottom" id="7XE-YB-WXp"/>
+                            <constraint firstItem="K13-ds-45Z" firstAttribute="top" secondItem="fWL-e2-pzv" secondAttribute="bottom" constant="94" id="MJj-XT-SnR"/>
                             <constraint firstItem="fWL-e2-pzv" firstAttribute="width" secondItem="fWL-e2-pzv" secondAttribute="height" multiplier="1:1" id="NDQ-oh-J05"/>
                             <constraint firstItem="i5N-mZ-4Db" firstAttribute="leading" secondItem="hnq-IE-tmb" secondAttribute="leading" id="ZDx-5Q-f4H"/>
                             <constraint firstItem="hnq-IE-tmb" firstAttribute="trailing" secondItem="fWL-e2-pzv" secondAttribute="trailing" constant="16" id="eKR-yC-f1d"/>
+                            <constraint firstItem="i5N-mZ-4Db" firstAttribute="leading" secondItem="K13-ds-45Z" secondAttribute="trailing" constant="-300" id="gtm-Xb-cla"/>
+                            <constraint firstItem="nCM-ON-2Qo" firstAttribute="leading" secondItem="hnq-IE-tmb" secondAttribute="leading" id="hn2-EW-CwH"/>
                             <constraint firstItem="i5N-mZ-4Db" firstAttribute="top" secondItem="hnq-IE-tmb" secondAttribute="top" constant="-20" id="iQw-yR-4VD"/>
+                            <constraint firstItem="K13-ds-45Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hnq-IE-tmb" secondAttribute="leading" symbolic="YES" id="qMs-I7-aC2"/>
+                            <constraint firstItem="nCM-ON-2Qo" firstAttribute="top" secondItem="K13-ds-45Z" secondAttribute="bottom" constant="80.5" id="tlS-IM-92s"/>
                             <constraint firstItem="hnq-IE-tmb" firstAttribute="trailing" secondItem="i5N-mZ-4Db" secondAttribute="trailing" id="trs-AS-YhN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hnq-IE-tmb"/>
@@ -246,6 +279,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bad" width="85" height="85"/>
+        <image name="brilliant" width="85" height="85"/>
         <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
         <image name="rateBackground" width="200" height="286"/>

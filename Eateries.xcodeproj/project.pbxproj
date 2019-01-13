@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */; };
+		1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA8121EBF321005DE98E /* RateViewController.swift */; };
 		11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */; };
 		11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5421EB28AB00E1B151 /* Main.storyboard */; };
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailTableViewCell.swift; sourceTree = "<group>"; };
+		1116BA8121EBF321005DE98E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		11A0EF4D21EB28AB00E1B151 /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EF5521EB28AB00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */,
 				11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */,
 				1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */,
+				1116BA8121EBF321005DE98E /* RateViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */,
 				1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */,
 				11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */,
+				1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
