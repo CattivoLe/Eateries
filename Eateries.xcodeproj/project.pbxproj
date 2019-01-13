@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */; };
-		11A0EF5321EB28AB00E1B151 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF5221EB28AB00E1B151 /* ViewController.swift */; };
 		11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5421EB28AB00E1B151 /* Main.storyboard */; };
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
 		11A0EF5B21EB28AC00E1B151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */; };
+		11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11A0EF4D21EB28AB00E1B151 /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11A0EF5221EB28AB00E1B151 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11A0EF5521EB28AB00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11A0EF5721EB28AC00E1B151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0EF5A21EB28AC00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A0EF5C21EB28AC00E1B151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateiesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */,
-				11A0EF5221EB28AB00E1B151 /* ViewController.swift */,
 				11A0EF5421EB28AB00E1B151 /* Main.storyboard */,
+				11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */,
 				11A0EF5721EB28AC00E1B151 /* Assets.xcassets */,
 				11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */,
 				11A0EF5C21EB28AC00E1B151 /* Info.plist */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11A0EF5321EB28AB00E1B151 /* ViewController.swift in Sources */,
+				11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GR7A3F4BM7;
 				INFOPLIST_FILE = Eateries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AlexCattivo.Eateries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GR7A3F4BM7;
 				INFOPLIST_FILE = Eateries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AlexCattivo.Eateries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
