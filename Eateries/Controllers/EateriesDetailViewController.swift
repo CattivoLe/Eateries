@@ -12,16 +12,24 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var rateButton: UIButton!
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        
+    }
     
     var restourant: Restaurant?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false // Не скрывать по свайпу
-        navigationController?.setToolbarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: restourant!.image)
+        rateButton.layer.cornerRadius = 5
+        rateButton.layer.borderWidth = 1
+        rateButton.layer.borderColor = UIColor.white.cgColor
         
         tableView.estimatedRowHeight = 38 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Автоматический размер ячейки

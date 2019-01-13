@@ -15,6 +15,10 @@ class EateiesTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.estimatedRowHeight = 85 // Размер ячейки
+        tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // Скрыть текст
     }
     
