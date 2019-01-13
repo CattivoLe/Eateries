@@ -66,13 +66,27 @@ class EateiesTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
+            let defaultText = "Я сейчас в " + self.restaurantNames[indexPath.row]
+            if let image = UIImage(named: self.restaurantImages[indexPath.row]) {
+                let activityController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
+                self.present(activityController, animated: true, completion: nil)
+            }
+        }
+        
+        let delite = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             self.restaurantNames.remove(at: indexPath.row)
             self.restaurantImages.remove(at: indexPath.row)
             self.restoranVisited.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        
+        share.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        delite.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        
+        return [delite, share]
     }
     
     
