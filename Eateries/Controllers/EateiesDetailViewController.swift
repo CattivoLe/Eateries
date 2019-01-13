@@ -8,9 +8,10 @@
 
 import UIKit
 
-class EateiesDetailViewController: UIViewController {
+class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
     
     var imageName = ""
     
@@ -19,15 +20,15 @@ class EateiesDetailViewController: UIViewController {
         imageView.image = UIImage(named: imageName)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesDetailTableViewCell
+        cell.keyLabel.text = "some key text"
+        cell.valueLabel.text = "some value text"
+        return cell
+    }
 
 }
