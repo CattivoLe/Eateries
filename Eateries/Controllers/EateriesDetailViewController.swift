@@ -15,6 +15,10 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     var restourant: Restaurant?
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: restourant!.image)

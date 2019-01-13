@@ -9,7 +9,10 @@
 import UIKit
 
 class EateiesTableViewController: UITableViewController {
-        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

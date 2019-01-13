@@ -169,7 +169,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PVv-ZQ-ct4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8eb-mu-1No" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="8eb-mu-1No" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qkc-R8-yml">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
