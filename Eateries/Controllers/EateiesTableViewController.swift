@@ -13,7 +13,11 @@ class EateiesTableViewController: UITableViewController {
     let restaurantNames = ["Ogonёk Grill&Bar", "Елу", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Respublica", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
     
     let restaurantImages = ["ogonek.jpg", "elu.jpg", "bonsai.jpg", "dastarhan.jpg", "indokitay.jpg", "x.o.jpg", "balkan.jpg", "respublika.jpg", "speakeasy.jpg", "morris.jpg", "istorii.jpg", "klassik.jpg", "love.jpg", "shok.jpg", "bochka.jpg"]
-
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,13 +38,15 @@ class EateiesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showAllert()
+        showAllert(index: indexPath.row)
     }
     
-    func showAllert() {
-        let allertController = UIAlertController(title: "Title", message: "message", preferredStyle: .actionSheet)
-        let cancelButtone = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    func showAllert(index: Int) {
+        let allertController = UIAlertController(title: nil, message: "Выберите действие", preferredStyle: .actionSheet)
+        let cancelButtone = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let callAction = UIAlertAction(title: "Позвонить: +7(495)555 00 0\(index)", style: .default, handler: nil)
         allertController.addAction(cancelButtone)
+        allertController.addAction(callAction)
         present(allertController, animated: true, completion: nil)
     }
 
