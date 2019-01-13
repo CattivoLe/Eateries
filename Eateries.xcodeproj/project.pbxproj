@@ -12,6 +12,7 @@
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
 		11A0EF5B21EB28AC00E1B151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */; };
 		11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */; };
+		11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		11A0EF5A21EB28AC00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11A0EF5C21EB28AC00E1B151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateiesTableViewController.swift; sourceTree = "<group>"; };
+		11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		11A0EF4F21EB28AB00E1B151 /* Eateries */ = {
 			isa = PBXGroup;
 			children = (
-				11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */,
 				11A0EF5421EB28AB00E1B151 /* Main.storyboard */,
-				11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */,
+				11A0EF6621EB303B00E1B151 /* Controllers */,
+				11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */,
 				11A0EF5721EB28AC00E1B151 /* Assets.xcassets */,
 				11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */,
 				11A0EF5C21EB28AC00E1B151 /* Info.plist */,
 			);
 			path = Eateries;
+			sourceTree = "<group>";
+		};
+		11A0EF6621EB303B00E1B151 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11A0EF6221EB299400E1B151 /* EateiesTableViewController.swift */,
+				11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			files = (
 				11A0EF6321EB299400E1B151 /* EateiesTableViewController.swift in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
+				11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
