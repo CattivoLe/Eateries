@@ -16,6 +16,8 @@ class EateiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: -  Цвет заливки таблицы
+        tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.estimatedRowHeight = 85 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
         
@@ -55,6 +57,7 @@ class EateiesTableViewController: UITableViewController {
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typeLabel.text = restaurants[indexPath.row].type
         cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
+        cell.backgroundColor = UIColor.clear // Прозрачные ячейки
         return cell
     }
     

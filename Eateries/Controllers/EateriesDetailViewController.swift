@@ -31,10 +31,10 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         imageView.image = UIImage(named: restourant!.image)
         
-//        Рамка вокруг кнопки перехода на страницу рейтинга
-//        rateButton.layer.cornerRadius = 5
-//        rateButton.layer.borderWidth = 1
-//        rateButton.layer.borderColor = UIColor.white.cgColor
+        // MARK: - Рамка вокруг кнопки перехода на страницу рейтинга
+        rateButton.layer.cornerRadius = 25
+        rateButton.layer.borderWidth = 2
+        rateButton.layer.borderColor = UIColor.white.cgColor
         
         // MARK: -  Цвет заливки таблицы
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
