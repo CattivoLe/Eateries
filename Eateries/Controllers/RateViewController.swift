@@ -14,6 +14,26 @@ class RateViewController: UIViewController {
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var briliantBotton: UIButton!
     
+    var restRating:String?
+    
+    // MARK: - Кнопки рейтинга
+    
+    @IBAction func rateRestourantButtons(sender: UIButton) {
+        
+        switch sender.tag {
+        case 0:
+            restRating = "bad"
+        case 1:
+            restRating = "good"
+        case 2:
+            restRating = "brilliant"
+        default:
+            break
+        }
+        
+        performSegue(withIdentifier: "UnwindSegueToDVT", sender: sender)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         
         // MARK: - Анимация кнопок
@@ -43,4 +63,5 @@ class RateViewController: UIViewController {
         blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.insertSubview(blurEffectView, at: 1)
     }
+    
 }
