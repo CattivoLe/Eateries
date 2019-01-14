@@ -193,21 +193,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="i5N-mZ-4Db">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-e2-pzv">
-                                <rect key="frame" x="319" y="34" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fWL-e2-pzv" secondAttribute="height" multiplier="1:1" id="MJ2-oa-WgS"/>
-                                    <constraint firstAttribute="height" constant="40" id="WIF-7K-Egy"/>
-                                </constraints>
-                                <state key="normal" image="close"/>
-                                <connections>
-                                    <segue destination="L7N-5Q-b45" kind="unwind" unwindAction="unwindSegueWithSegue:" id="m20-HB-Cxt"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как вам у нас?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K13-ds-45Z">
-                                <rect key="frame" x="74" y="168" width="226" height="42.5"/>
+                                <rect key="frame" x="73" y="168" width="229" height="42.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="226" id="xOq-nr-zlc"/>
+                                    <constraint firstAttribute="width" secondItem="K13-ds-45Z" secondAttribute="height" multiplier="113:21" id="eNP-JC-kuQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="226" id="ss8-CS-98T"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="35"/>
                                 <color key="textColor" red="0.99982637169999999" green="0.99629324669999997" blue="0.98038989310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -216,40 +206,54 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nCM-ON-2Qo">
                                 <rect key="frame" x="0.0" y="291" width="375" height="85"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-kL-vqr">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzH-kL-vqr" userLabel="BadButton">
                                         <rect key="frame" x="0.0" y="0.0" width="119.5" height="85"/>
                                         <state key="normal" image="bad"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEA-90-6QF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEA-90-6QF" userLabel="GoodButton">
                                         <rect key="frame" x="127.5" y="0.0" width="120" height="85"/>
                                         <state key="normal" image="good"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pA-jL-Kcq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pA-jL-Kcq" userLabel="BrilliantButton">
                                         <rect key="frame" x="255.5" y="0.0" width="119.5" height="85"/>
                                         <state key="normal" image="brilliant"/>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-e2-pzv" userLabel="CancelButton">
+                                <rect key="frame" x="167.5" y="484" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="NPW-mm-VVf"/>
+                                    <constraint firstAttribute="width" secondItem="fWL-e2-pzv" secondAttribute="height" multiplier="1:1" id="YkE-sg-hEx"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <segue destination="L7N-5Q-b45" kind="unwind" unwindAction="unwindSegueWithSegue:" id="m20-HB-Cxt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nCM-ON-2Qo" firstAttribute="centerX" secondItem="i5N-mZ-4Db" secondAttribute="centerX" id="2dM-Dz-zlP"/>
                             <constraint firstItem="hnq-IE-tmb" firstAttribute="trailing" secondItem="nCM-ON-2Qo" secondAttribute="trailing" id="3lY-GW-bam"/>
-                            <constraint firstItem="fWL-e2-pzv" firstAttribute="top" secondItem="hnq-IE-tmb" secondAttribute="top" constant="14" id="7Vh-19-olF"/>
+                            <constraint firstItem="K13-ds-45Z" firstAttribute="centerX" secondItem="i5N-mZ-4Db" secondAttribute="centerX" id="5Cw-AX-CGd"/>
                             <constraint firstItem="hnq-IE-tmb" firstAttribute="bottom" secondItem="i5N-mZ-4Db" secondAttribute="bottom" id="7XE-YB-WXp"/>
-                            <constraint firstItem="K13-ds-45Z" firstAttribute="top" secondItem="fWL-e2-pzv" secondAttribute="bottom" constant="94" id="MJj-XT-SnR"/>
-                            <constraint firstItem="fWL-e2-pzv" firstAttribute="width" secondItem="fWL-e2-pzv" secondAttribute="height" multiplier="1:1" id="NDQ-oh-J05"/>
                             <constraint firstItem="i5N-mZ-4Db" firstAttribute="leading" secondItem="hnq-IE-tmb" secondAttribute="leading" id="ZDx-5Q-f4H"/>
-                            <constraint firstItem="hnq-IE-tmb" firstAttribute="trailing" secondItem="fWL-e2-pzv" secondAttribute="trailing" constant="16" id="eKR-yC-f1d"/>
-                            <constraint firstItem="i5N-mZ-4Db" firstAttribute="leading" secondItem="K13-ds-45Z" secondAttribute="trailing" constant="-300" id="gtm-Xb-cla"/>
+                            <constraint firstItem="fWL-e2-pzv" firstAttribute="top" secondItem="iEA-90-6QF" secondAttribute="bottom" constant="108" id="Zxd-ve-036"/>
+                            <constraint firstItem="iEA-90-6QF" firstAttribute="centerY" secondItem="i5N-mZ-4Db" secondAttribute="centerY" id="cOf-gc-luo"/>
                             <constraint firstItem="nCM-ON-2Qo" firstAttribute="leading" secondItem="hnq-IE-tmb" secondAttribute="leading" id="hn2-EW-CwH"/>
                             <constraint firstItem="i5N-mZ-4Db" firstAttribute="top" secondItem="hnq-IE-tmb" secondAttribute="top" constant="-20" id="iQw-yR-4VD"/>
-                            <constraint firstItem="K13-ds-45Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hnq-IE-tmb" secondAttribute="leading" symbolic="YES" id="qMs-I7-aC2"/>
-                            <constraint firstItem="nCM-ON-2Qo" firstAttribute="top" secondItem="K13-ds-45Z" secondAttribute="bottom" constant="80.5" id="tlS-IM-92s"/>
                             <constraint firstItem="hnq-IE-tmb" firstAttribute="trailing" secondItem="i5N-mZ-4Db" secondAttribute="trailing" id="trs-AS-YhN"/>
+                            <constraint firstItem="iEA-90-6QF" firstAttribute="top" secondItem="K13-ds-45Z" secondAttribute="bottom" constant="80.5" id="u1i-uo-MQL"/>
+                            <constraint firstItem="fWL-e2-pzv" firstAttribute="centerX" secondItem="i5N-mZ-4Db" secondAttribute="centerX" id="yeC-Cg-IYI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hnq-IE-tmb"/>
                     </view>
+                    <connections>
+                        <outlet property="badButton" destination="XzH-kL-vqr" id="TBR-m5-TbO"/>
+                        <outlet property="briliantBotton" destination="1pA-jL-Kcq" id="KER-3e-iWs"/>
+                        <outlet property="goodButton" destination="iEA-90-6QF" id="fJf-o7-BQD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTw-tf-q2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="L7N-5Q-b45" userLabel="Exit" sceneMemberID="exit"/>
