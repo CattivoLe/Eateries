@@ -45,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1116BA8321EC8C50005DE98E /* Cell Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */,
+				1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */,
+			);
+			path = "Cell Controllers";
+			sourceTree = "<group>";
+		};
 		11A0EF4421EB28AB00E1B151 = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +87,9 @@
 		11A0EF6621EB303B00E1B151 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1116BA8321EC8C50005DE98E /* Cell Controllers */,
 				11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */,
 				11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */,
-				11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */,
-				1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */,
 				1116BA8121EBF321005DE98E /* RateViewController.swift */,
 			);
 			path = Controllers;

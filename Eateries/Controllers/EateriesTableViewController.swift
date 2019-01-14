@@ -19,9 +19,10 @@ class EateiesTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 85 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // Скрыть текст
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // Скрыть текст кнопки назад
     }
     
+    // MARK: - Model source
     var restaurants: [Restaurant] = [
         Restaurant(name: "Ogonёk Grill&Bar", type: "ресторан", location: "Уфа, Бульвар Хадии Давлетшиной 21", image: "ogonek.jpg", isVisited: false),
         Restaurant(name: "Елу", type: "ресторан", location: "Уфа", image: "elu.jpg", isVisited: false),
@@ -49,7 +50,7 @@ class EateiesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesTableViewCell
         cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
         cell.thumbnailImageView.layer.cornerRadius = 32.5
-        cell.thumbnailImageView.clipsToBounds = true
+        cell.thumbnailImageView.clipsToBounds = true // Скругление картинки
         cell.nameLabel.text = restaurants[indexPath.row].name
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typeLabel.text = restaurants[indexPath.row].type

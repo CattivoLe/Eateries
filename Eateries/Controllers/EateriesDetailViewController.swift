@@ -15,7 +15,6 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var rateButton: UIButton!
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        
     }
     
     var restourant: Restaurant?
@@ -28,11 +27,12 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         imageView.image = UIImage(named: restourant!.image)
         rateButton.layer.cornerRadius = 5
-        rateButton.layer.borderWidth = 1
+        rateButton.layer.borderWidth = 1 // Рамка вокруг кнопки перехода на страницу рейтинга
         rateButton.layer.borderColor = UIColor.white.cgColor
         
         tableView.estimatedRowHeight = 38 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Автоматический размер ячейки
+        
         tableView.tableFooterView = UIView(frame: CGRect.zero) // Скрыть неиспользуемую часть таблицы
         title = restourant!.name // Заголовок
     }

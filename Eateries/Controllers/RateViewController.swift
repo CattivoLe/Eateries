@@ -12,6 +12,9 @@ class RateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: - Эффект размытия заднего фона
+        
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
