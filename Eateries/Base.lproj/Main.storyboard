@@ -86,6 +86,35 @@
             </objects>
             <point key="canvasLocation" x="777" y="136"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="9RY-DP-qE2">
+            <objects>
+                <viewController id="nVS-ne-1Pi" customClass="MapViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tdm-EI-yFr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-Nd-uB3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9kL-Nd-uB3" firstAttribute="bottom" secondItem="1M0-kQ-A1A" secondAttribute="bottom" id="ZQf-8p-XRh"/>
+                            <constraint firstItem="9kL-Nd-uB3" firstAttribute="top" secondItem="Tdm-EI-yFr" secondAttribute="top" id="gAN-3W-zMV"/>
+                            <constraint firstItem="9kL-Nd-uB3" firstAttribute="trailing" secondItem="1M0-kQ-A1A" secondAttribute="trailing" id="qMu-FR-6rE"/>
+                            <constraint firstItem="9kL-Nd-uB3" firstAttribute="leading" secondItem="1M0-kQ-A1A" secondAttribute="leading" id="v2y-vW-G3s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1M0-kQ-A1A"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="9kL-Nd-uB3" id="83Y-gp-rbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pfk-ht-cZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="-576"/>
+        </scene>
         <!--Eateies Detail View Controller-->
         <scene sceneID="FFm-5T-7RG">
             <objects>
@@ -160,15 +189,29 @@
                                     <segue destination="xMO-HZ-mRa" kind="showDetail" id="wM8-lQ-LNL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzk-ZL-0HR" userLabel="MapButton">
+                                <rect key="frame" x="305" y="142" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4ip-32-hov"/>
+                                    <constraint firstAttribute="width" secondItem="Tzk-ZL-0HR" secondAttribute="height" multiplier="1:1" id="EaZ-gr-a2p"/>
+                                </constraints>
+                                <state key="normal" image="map"/>
+                                <connections>
+                                    <segue destination="nVS-ne-1Pi" kind="show" identifier="mapSegue" id="umY-4M-FyN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Tzk-ZL-0HR" firstAttribute="top" secondItem="dSs-ex-kG6" secondAttribute="bottom" constant="8" id="3E5-Hb-K00"/>
                             <constraint firstItem="bzB-4H-taf" firstAttribute="leading" secondItem="cFj-b6-KZm" secondAttribute="leading" id="LKd-bB-eLg"/>
+                            <constraint firstItem="cFj-b6-KZm" firstAttribute="trailing" secondItem="Tzk-ZL-0HR" secondAttribute="trailing" constant="20" id="S18-bZ-p5Y"/>
                             <constraint firstItem="cFj-b6-KZm" firstAttribute="bottom" secondItem="bzB-4H-taf" secondAttribute="bottom" id="eRE-UG-ct3"/>
                             <constraint firstItem="dSs-ex-kG6" firstAttribute="top" secondItem="cFj-b6-KZm" secondAttribute="top" constant="20" id="lpe-ri-5Ph"/>
                             <constraint firstItem="bzB-4H-taf" firstAttribute="top" secondItem="cFj-b6-KZm" secondAttribute="top" constant="-64" id="nTz-qx-5Ff"/>
                             <constraint firstItem="cFj-b6-KZm" firstAttribute="trailing" secondItem="bzB-4H-taf" secondAttribute="trailing" id="ryr-sT-juT"/>
                             <constraint firstItem="cFj-b6-KZm" firstAttribute="trailing" secondItem="dSs-ex-kG6" secondAttribute="trailing" constant="20" id="ssf-Vf-Wjp"/>
+                            <constraint firstItem="Tzk-ZL-0HR" firstAttribute="width" secondItem="Tzk-ZL-0HR" secondAttribute="height" multiplier="1:1" id="uIk-3j-eZp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cFj-b6-KZm"/>
                     </view>
@@ -267,7 +310,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTw-tf-q2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="L7N-5Q-b45" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2184.8000000000002" y="134.48275862068968"/>
+            <point key="canvasLocation" x="2274" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PVv-ZQ-ct4">
@@ -296,6 +339,7 @@
         <image name="brilliant" width="85" height="85"/>
         <image name="close" width="50" height="50"/>
         <image name="good" width="85" height="85"/>
+        <image name="map" width="50" height="50"/>
         <image name="rateBackground" width="200" height="286"/>
     </resources>
 </document>
