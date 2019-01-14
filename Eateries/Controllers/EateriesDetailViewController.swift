@@ -52,7 +52,8 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesDetailTableViewCell
-        cell.backgroundColor = UIColor.clear // Прозрачные ячейки
+        // MARK: - Прозрачные ячейки
+        cell.backgroundColor = UIColor.clear
         
         switch indexPath.row {
         case 0:

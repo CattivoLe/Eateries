@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */; };
 		1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */; };
 		1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA8121EBF321005DE98E /* RateViewController.swift */; };
 		11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689FE421ECA8CB00E64C2E /* MapViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEateryTableViewController.swift; sourceTree = "<group>"; };
 		1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1116BA8121EBF321005DE98E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		11689FE421ECA8CB00E64C2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */,
 				1116BA8121EBF321005DE98E /* RateViewController.swift */,
 				11689FE421ECA8CB00E64C2E /* MapViewController.swift */,
+				11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */,
 				11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */,
 				11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
