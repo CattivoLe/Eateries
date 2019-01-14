@@ -11,7 +11,7 @@ import UIKit
 class EateiesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.hidesBarsOnSwipe = true // Скрывать по свайпу
+        navigationController?.hidesBarsOnSwipe = true // Скрывать верхний бар по свайпу
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,8 @@ class EateiesTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 85 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) // Скрыть текст кнопки назад
+        // MARK: - Скрыть текст кнопки назад
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     // MARK: - Model source
@@ -41,7 +42,6 @@ class EateiesTableViewController: UITableViewController {
         Restaurant(name: "Бочка", type: "ресторан", location:  "Уфа", image: "bochka.jpg", isVisited: false)]
     
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return restaurants.count
     }
@@ -83,8 +83,9 @@ class EateiesTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: - Действия по свайпу в сторону
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
+        // MARK: - Кнопка "Поделиться"
         let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
             let defaultText = "Я сейчас в " + self.restaurants[indexPath.row].name
             if let image = UIImage(named: self.restaurants[indexPath.row].image) {
@@ -92,7 +93,7 @@ class EateiesTableViewController: UITableViewController {
                 self.present(activityController, animated: true, completion: nil)
             }
         }
-        
+        // MARK: - Кнопка "Удалить"
         let delite = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             self.restaurants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)

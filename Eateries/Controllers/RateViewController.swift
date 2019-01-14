@@ -17,7 +17,6 @@ class RateViewController: UIViewController {
     var restRating:String?
     
     // MARK: - Кнопки рейтинга
-    
     @IBAction func rateRestourantButtons(sender: UIButton) {
         
         switch sender.tag {
@@ -37,7 +36,6 @@ class RateViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         // MARK: - Анимация кнопок
-        
         let buttonArray = [badButton, goodButton, briliantBotton]
         for (index, button) in buttonArray.enumerated() {
             let delay = Double(index) * 0.2
@@ -48,15 +46,13 @@ class RateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // MARK: - Анимация, стартовая позиция
-        
         badButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         goodButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         briliantBotton.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         // MARK: - Эффект размытия заднего фона
-        
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds

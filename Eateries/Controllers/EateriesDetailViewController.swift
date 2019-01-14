@@ -20,7 +20,7 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
-    var restourant: Restaurant?
+    var restourant: Restaurant? // Рейтинг
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false // Не скрывать по свайпу
@@ -28,12 +28,16 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imageView.image = UIImage(named: restourant!.image)
+        
+//        Рамка вокруг кнопки перехода на страницу рейтинга
 //        rateButton.layer.cornerRadius = 5
-//        rateButton.layer.borderWidth = 1 // Рамка вокруг кнопки перехода на страницу рейтинга
+//        rateButton.layer.borderWidth = 1
 //        rateButton.layer.borderColor = UIColor.white.cgColor
         
-        tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1) // Цвет заливки таблицы
+        // MARK: -  Цвет заливки таблицы
+        tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
             
         tableView.estimatedRowHeight = 38 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Автоматический размер ячейки
