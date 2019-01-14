@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -17,6 +17,8 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
         
         let geocoder = CLGeocoder() // Конверирует координаты в строку и наоборот
         
@@ -37,6 +39,25 @@ class MapViewController: UIViewController {
             self.mapView.selectAnnotation(annotation, animated: true) // Раскрыть аннотации к точке
             
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else { return nil }
+        
+        let annotationIdentifire = "restAnnotation"
+        var annotatioView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifire) as? MKPinAnnotationView
+        
+        if annotatioView == nil {
+            annotatioView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifire)
+            annotatioView?.canShowCallout = true
+        }
+        
+        let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        rightImage.image = UIImage(named: restaurant.image)
+        annotatioView?.rightCalloutAccessoryView = rightImage
+        annotatioView?.pinTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
+        return annotatioView
     }
     
 }
