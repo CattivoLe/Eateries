@@ -8,10 +8,19 @@
 
 import UIKit
 
-class AddNewEateryTableViewController: UITableViewController {
+class AddNewEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        imageView.contentMode = .scaleAspectFill // Режим отображения
+        imageView.clipsToBounds = true // Обрезать все что за рамками супервью
+        dismiss(animated: true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -38,6 +47,7 @@ class AddNewEateryTableViewController: UITableViewController {
     func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) { // Проверка доступности камеры или библиотеки
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true // Разрешить редактировать картинку после выбора
             imagePicker.sourceType = source // Камера иди библиотека картинок
             self.present(imagePicker, animated: true, completion: nil)
