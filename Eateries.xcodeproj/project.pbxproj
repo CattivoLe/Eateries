@@ -12,6 +12,8 @@
 		1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA8121EBF321005DE98E /* RateViewController.swift */; };
 		11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689FE421ECA8CB00E64C2E /* MapViewController.swift */; };
 		11689FE821ECA95300E64C2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11689FE721ECA95300E64C2E /* MapKit.framework */; };
+		1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD3E21F07EE700133A9E /* CoreDataStack.swift */; };
+		1183CD4221F0812200133A9E /* EateriesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD4021F0812200133A9E /* EateriesModel.xcdatamodeld */; };
 		11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */; };
 		11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5421EB28AB00E1B151 /* Main.storyboard */; };
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
@@ -19,7 +21,6 @@
 		11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */; };
 		11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */; };
 		11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */; };
-		11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6921EB90EA00E1B151 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		1116BA8121EBF321005DE98E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		11689FE421ECA8CB00E64C2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		11689FE721ECA95300E64C2E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1183CD3E21F07EE700133A9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1183CD4121F0812200133A9E /* EateriesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EateriesModel.xcdatamodel; sourceTree = "<group>"; };
 		11A0EF4D21EB28AB00E1B151 /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EF5521EB28AB00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,7 +40,6 @@
 		11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewController.swift; sourceTree = "<group>"; };
 		11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
 		11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailViewController.swift; sourceTree = "<group>"; };
-		11A0EF6921EB90EA00E1B151 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,9 @@
 				11A0EF5921EB28AC00E1B151 /* LaunchScreen.storyboard */,
 				11A0EF6621EB303B00E1B151 /* Controllers */,
 				11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */,
-				11A0EF6921EB90EA00E1B151 /* Restaurant.swift */,
+				1183CD3E21F07EE700133A9E /* CoreDataStack.swift */,
 				11A0EF5721EB28AC00E1B151 /* Assets.xcassets */,
+				1183CD4021F0812200133A9E /* EateriesModel.xcdatamodeld */,
 				11A0EF5C21EB28AC00E1B151 /* Info.plist */,
 			);
 			path = Eateries;
@@ -190,10 +193,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */,
-				11A0EF6A21EB90EA00E1B151 /* Restaurant.swift in Sources */,
 				11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */,
+				1183CD4221F0812200133A9E /* EateriesModel.xcdatamodeld in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
 				11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */,
+				1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */,
 				1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */,
 				11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */,
 				1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */,
@@ -346,7 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GR7A3F4BM7;
 				INFOPLIST_FILE = Eateries/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GR7A3F4BM7;
 				INFOPLIST_FILE = Eateries/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -399,6 +403,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1183CD4021F0812200133A9E /* EateriesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1183CD4121F0812200133A9E /* EateriesModel.xcdatamodel */,
+			);
+			currentVersion = 1183CD4121F0812200133A9E /* EateriesModel.xcdatamodel */;
+			path = EateriesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 11A0EF4521EB28AB00E1B151 /* Project object */;
 }

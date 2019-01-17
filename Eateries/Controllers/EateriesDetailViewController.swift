@@ -28,7 +28,7 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage(named: restourant!.image)
+        imageView.image = UIImage(data: restourant!.image! as Data)
         
         // MARK: - Рамка вокруг кнопки перехода на страницу рейтинга
         rateButton.layer.cornerRadius = 25
