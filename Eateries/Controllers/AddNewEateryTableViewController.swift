@@ -37,7 +37,27 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
             let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
+            print("Не заполнены поля")
         } else {
+            
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+                let restaurant = Restaurant(context: context)
+                restaurant.name = nameTextField.text
+                restaurant.type = typeTextField.text
+                restaurant.location = adresTextField.text
+                restaurant.isVisited = visitedStatus
+                if let image = imageView.image {
+                    restaurant.image = UIImage.pngData(image)()
+                }
+                
+                do {
+                    try context.save()
+                    print("Сохранено")
+                } catch let error as NSError {
+                    print("Не удалось сохранить данные \(error), \(error.userInfo)")
+                }
+            }
+            
             performSegue(withIdentifier: "unwindSegueFromNew", sender: self)
         }
     }

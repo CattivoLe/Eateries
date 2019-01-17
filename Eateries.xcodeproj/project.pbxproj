@@ -13,7 +13,7 @@
 		11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689FE421ECA8CB00E64C2E /* MapViewController.swift */; };
 		11689FE821ECA95300E64C2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11689FE721ECA95300E64C2E /* MapKit.framework */; };
 		1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD3E21F07EE700133A9E /* CoreDataStack.swift */; };
-		1183CD4221F0812200133A9E /* EateriesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD4021F0812200133A9E /* EateriesModel.xcdatamodeld */; };
+		1183CD4221F0812200133A9E /* Eateries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD4021F0812200133A9E /* Eateries.xcdatamodeld */; };
 		11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */; };
 		11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5421EB28AB00E1B151 /* Main.storyboard */; };
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
@@ -97,7 +97,7 @@
 				11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */,
 				1183CD3E21F07EE700133A9E /* CoreDataStack.swift */,
 				11A0EF5721EB28AC00E1B151 /* Assets.xcassets */,
-				1183CD4021F0812200133A9E /* EateriesModel.xcdatamodeld */,
+				1183CD4021F0812200133A9E /* Eateries.xcdatamodeld */,
 				11A0EF5C21EB28AC00E1B151 /* Info.plist */,
 			);
 			path = Eateries;
@@ -194,7 +194,7 @@
 			files = (
 				11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */,
 				11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */,
-				1183CD4221F0812200133A9E /* EateriesModel.xcdatamodeld in Sources */,
+				1183CD4221F0812200133A9E /* Eateries.xcdatamodeld in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
 				11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */,
 				1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */,
@@ -405,13 +405,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1183CD4021F0812200133A9E /* EateriesModel.xcdatamodeld */ = {
+		1183CD4021F0812200133A9E /* Eateries.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				1183CD4121F0812200133A9E /* EateriesModel.xcdatamodel */,
 			);
 			currentVersion = 1183CD4121F0812200133A9E /* EateriesModel.xcdatamodel */;
-			path = EateriesModel.xcdatamodeld;
+			path = Eateries.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
