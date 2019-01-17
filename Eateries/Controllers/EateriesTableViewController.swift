@@ -12,6 +12,8 @@ import CoreData
 class EateiesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchResultsController: NSFetchedResultsController<Restaurant>!
+    var searchController: UISearchController!
+    var filtredResult: [Restaurant] = []
     var restaurants: [Restaurant] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -19,6 +21,12 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: - Search Controller
+        searchController = UISearchController(searchResultsController: nil) // Отображать результат в текущем контроллере
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false // Затемнять контролер при вводе
+        tableView.tableHeaderView = searchController.searchBar
         // MARK: -  Подстройка таблицы
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.estimatedRowHeight = 85 // Размер ячейки
@@ -66,20 +74,40 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         tableView.endUpdates()
     }
     
+    func filterContentFor(searchText text: String) {
+        filtredResult = restaurants.filter { (restaurant) -> Bool in
+            return (restaurant.name?.lowercased().contains(text.lowercased()))! // Добавить в массив только ресторан чье имя совпадает со строкой запроса
+        }
+    }
+    func restaurantToDisplayAt(indexPath: IndexPath) -> Restaurant {
+        let restaurant: Restaurant
+        if searchController.isActive && searchController.searchBar.text != "" {
+            restaurant = filtredResult[indexPath.row]
+        } else {
+            restaurant = restaurants[indexPath.row]
+        }
+        return restaurant
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filtredResult.count
+        }
         return restaurants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesTableViewCell
-        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image! as Data)
+        let restaurant = restaurantToDisplayAt(indexPath: indexPath)
+        
+        cell.thumbnailImageView.image = UIImage(data: restaurant.image! as Data)
         cell.thumbnailImageView.layer.cornerRadius = 32.5
         cell.thumbnailImageView.clipsToBounds = true // Скругление картинки
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
-        cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
+        cell.nameLabel.text = restaurant.name
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        cell.accessoryType = restaurant.isVisited ? .checkmark : .none
         cell.backgroundColor = UIColor.clear // Прозрачная ячейка
         return cell
     }
@@ -122,8 +150,15 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         if segue.identifier == "detailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let dvc = segue.destination as! EateiesDetailViewController
-                dvc.restourant = self.restaurants[indexPath.row]
+                dvc.restourant = restaurantToDisplayAt(indexPath: indexPath)
             }
         }
+    }
+}
+
+extension EateiesTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentFor(searchText: searchController.searchBar.text!)
+        tableView.reloadData()
     }
 }
