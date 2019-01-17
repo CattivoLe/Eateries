@@ -52,11 +52,11 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert: guard let indexPath = newIndexPath else { break }
-            tableView.insertRows(at: [indexPath], with: .fade)
+        tableView.insertRows(at: [indexPath], with: .fade)
         case .delete: guard let indexPath = indexPath else { break }
-            tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
         case .update: guard let indexPath = indexPath else { break }
-            tableView.reloadRows(at: [indexPath], with: .fade)
+        tableView.reloadRows(at: [indexPath], with: .fade)
         default:
             tableView.reloadData()
         }
@@ -101,13 +101,12 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         // Кнопка "Удалить"
         let delite = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             self.restaurants.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
                 let objectToDelite = self.fetchResultsController.object(at: indexPath)
                 context.delete(objectToDelite)
                 do {
                     try context.save()
-                } catch let error as NSError {
+                } catch {
                     print(error.localizedDescription)
                 }
             }
