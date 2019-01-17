@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EateiesTableViewController: UITableViewController {
+class EateiesTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchResultsController: NSFetchedResultsController<Restaurant>!
     var restaurants: [Restaurant] = []
@@ -27,14 +27,15 @@ class EateiesTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // MARK: - CoreData Load
-        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true) // Сортировать по полю "name" в порядке увеличения
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest() // Запрос
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true) // Фильтр
+        fetchRequest.sortDescriptors = [sortDescriptor] // Сортировать по полю "name" в порядке увеличения
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext { // Добираемся до контекста
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultsController.delegate = self
             do {
                 try fetchResultsController.performFetch()
-                restaurants = fetchResultsController.fetchedObjects!
+                restaurants = fetchResultsController.fetchedObjects! // Сохраняем полученные данные в массив
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
@@ -42,6 +43,27 @@ class EateiesTableViewController: UITableViewController {
     }
     
     @IBAction func close(segue: UIStoryboardSegue) {
+    }
+    
+    // MARK: - Fetch Results Controller delegate
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert: guard let indexPath = newIndexPath else { break }
+            tableView.insertRows(at: [indexPath], with: .fade)
+        case .delete: guard let indexPath = indexPath else { break }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .update: guard let indexPath = indexPath else { break }
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        default:
+            tableView.reloadData()
+        }
+        restaurants = controller.fetchedObjects as! [Restaurant]
+    }
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
     
     // MARK: - Table view data source
