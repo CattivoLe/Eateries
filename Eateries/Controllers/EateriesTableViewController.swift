@@ -102,6 +102,15 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         let delite = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             self.restaurants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+                let objectToDelite = self.fetchResultsController.object(at: indexPath)
+                context.delete(objectToDelite)
+                do {
+                    try context.save()
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }
         }
         
         share.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
