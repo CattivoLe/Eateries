@@ -103,7 +103,7 @@
                         <sections>
                             <tableViewSection id="Af1-OF-CEJ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="b6t-GT-Go6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="b6t-GT-Go6" userLabel="Фотография">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b6t-GT-Go6" id="qj9-hG-biS">
@@ -123,7 +123,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="fs5-2Z-66S">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="fs5-2Z-66S" userLabel="Название">
                                         <rect key="frame" x="0.0" y="250" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fs5-2Z-66S" id="DSn-FJ-Z30">
@@ -156,7 +156,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="moK-w9-0KO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="moK-w9-0KO" userLabel="Адрес">
                                         <rect key="frame" x="0.0" y="325" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="moK-w9-0KO" id="GbV-tZ-77p">
@@ -189,7 +189,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="qqk-UR-eWU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="qqk-UR-eWU" userLabel="Тип">
                                         <rect key="frame" x="0.0" y="400" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qqk-UR-eWU" id="ZGw-fc-c1C">
@@ -222,7 +222,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="p28-Fs-2C0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" id="p28-Fs-2C0" userLabel="Посещение">
                                         <rect key="frame" x="0.0" y="475" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p28-Fs-2C0" id="jYU-jQ-f4I">
@@ -305,7 +305,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqL-XY-FmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HRu-M1-dlr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="728.79999999999995" y="-576.1619190404798"/>
+            <point key="canvasLocation" x="729" y="-576"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="9RY-DP-qE2">
@@ -334,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfk-ht-cZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2273" y="-576"/>
+            <point key="canvasLocation" x="2225" y="-576"/>
         </scene>
         <!--Eateies Detail View Controller-->
         <scene sceneID="FFm-5T-7RG">
@@ -531,7 +531,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTw-tf-q2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="L7N-5Q-b45" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="136"/>
+            <point key="canvasLocation" x="2226" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PVv-ZQ-ct4">

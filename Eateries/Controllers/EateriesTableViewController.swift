@@ -16,7 +16,7 @@ class EateiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: -  Цвет заливки таблицы
+        // MARK: -  Подстройка таблицы
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.estimatedRowHeight = 85 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
@@ -25,7 +25,6 @@ class EateiesTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    // MARK: - Model source
     var restaurants: [Restaurant] = [
         Restaurant(name: "Ogonёk Grill&Bar", type: "ресторан", location: "Уфа, Бульвар Хадии Давлетшиной 21", image: "ogonek.jpg", isVisited: false),
         Restaurant(name: "Елу", type: "ресторан", location: "Уфа", image: "elu.jpg", isVisited: false),
@@ -60,38 +59,17 @@ class EateiesTableViewController: UITableViewController {
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typeLabel.text = restaurants[indexPath.row].type
         cell.accessoryType = self.restaurants[indexPath.row].isVisited ? .checkmark : .none
-        cell.backgroundColor = UIColor.clear // Прозрачные ячейки
+        cell.backgroundColor = UIColor.clear // Прозрачная ячейка
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        let allertController = UIAlertController(title: nil, message: "Выберите действие", preferredStyle: .actionSheet)
-//        let cancelButtone = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-//        let callAction = UIAlertAction(title: "Позвонить: +7(495)555 00 0\(indexPath.row)", style: .default) {
-//            (action: UIAlertAction) -> Void in
-//            let alertController = UIAlertController(title: nil, message: "Вызов не может быть совершен", preferredStyle: .alert)
-//            let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
-//            alertController.addAction(button)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//        let visitedTitle = self.restoranVisited[indexPath.row] ? "Я не был сдесь" : "Я был сдесь"
-//        let visited = UIAlertAction(title: visitedTitle, style: .default) { (action) in
-//            let cell = tableView.cellForRow(at: indexPath)
-//            self.restoranVisited[indexPath.row] = !self.restoranVisited[indexPath.row]
-//            cell?.accessoryType = self.restoranVisited[indexPath.row] ? .checkmark : .none
-//        }
-//        allertController.addAction(cancelButtone)
-//        allertController.addAction(callAction)
-//        allertController.addAction(visited)
-//        present(allertController, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true) // Снять выделение после нажатия
     }
     
     // MARK: - Действия по свайпу в сторону
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        // MARK: - Кнопка "Поделиться"
+        // Кнопка "Поделиться"
         let share = UITableViewRowAction(style: .default, title: "Поделиться") { (action, indexPath) in
             let defaultText = "Я сейчас в " + self.restaurants[indexPath.row].name
             if let image = UIImage(named: self.restaurants[indexPath.row].image) {
@@ -99,7 +77,7 @@ class EateiesTableViewController: UITableViewController {
                 self.present(activityController, animated: true, completion: nil)
             }
         }
-        // MARK: - Кнопка "Удалить"
+        // Кнопка "Удалить"
         let delite = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
             self.restaurants.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)

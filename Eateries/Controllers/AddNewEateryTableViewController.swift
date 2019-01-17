@@ -10,6 +10,8 @@ import UIKit
 
 class AddNewEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var visitedStatus = false
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var adresTextField: UITextField!
@@ -21,15 +23,17 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
         if sender == yesButton {
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.7301866559, blue: 0, alpha: 1)
             noButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            visitedStatus = true
         } else {
             sender.backgroundColor = #colorLiteral(red: 0.7344238162, green: 0.1379992366, blue: 0.148756355, alpha: 1)
             yesButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            visitedStatus = false
         }
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if nameTextField.text == "" || adresTextField.text == "" || typeTextField.text == "" {
-            let alert = UIAlertController(title: "Упс", message: "Не все поля заполнены", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Упсc..", message: "Не все поля заполнены", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)

@@ -29,12 +29,10 @@ class RateViewController: UIViewController {
         default:
             break
         }
-        
         performSegue(withIdentifier: "UnwindSegueToDVT", sender: sender)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         // MARK: - Анимация кнопок
         let buttonArray = [badButton, goodButton, briliantBotton]
         for (index, button) in buttonArray.enumerated() {
@@ -46,12 +44,10 @@ class RateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         // MARK: - Анимация, стартовая позиция
         badButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         goodButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         briliantBotton.transform = CGAffineTransform(scaleX: 0, y: 0)
-        
         // MARK: - Эффект размытия заднего фона
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)

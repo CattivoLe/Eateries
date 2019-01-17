@@ -20,7 +20,7 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
-    var restourant: Restaurant? // Рейтинг
+    var restourant: Restaurant?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false // Не скрывать по свайпу
@@ -28,7 +28,6 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imageView.image = UIImage(named: restourant!.image)
         
         // MARK: - Рамка вокруг кнопки перехода на страницу рейтинга
@@ -36,13 +35,12 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         rateButton.layer.borderWidth = 2
         rateButton.layer.borderColor = UIColor.white.cgColor
         
-        // MARK: -  Цвет заливки таблицы
+        // MARK: -  Подстройка таблицы
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-            
         tableView.estimatedRowHeight = 38 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Автоматический размер ячейки
-        
         tableView.tableFooterView = UIView(frame: CGRect.zero) // Скрыть неиспользуемую часть таблицы
+        
         title = restourant!.name // Заголовок
     }
     
@@ -52,8 +50,7 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EateriesDetailTableViewCell
-        // MARK: - Прозрачные ячейки
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear // Прозрачная ячейка
         
         switch indexPath.row {
         case 0:
