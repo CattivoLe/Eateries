@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class EateiesTableViewController: UITableViewController {
     
+    var fetchResultsController: NSFetchedResultsController<Restaurant>!
     var restaurants: [Restaurant] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -17,14 +19,26 @@ class EateiesTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // MARK: -  Подстройка таблицы
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.estimatedRowHeight = 85 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
-        
         // MARK: - Скрыть текст кнопки назад
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // MARK: - CoreData Load
+        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true) // Сортировать по полю "name" в порядке увеличения
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            do {
+                try fetchResultsController.performFetch()
+                restaurants = fetchResultsController.fetchedObjects!
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     @IBAction func close(segue: UIStoryboardSegue) {

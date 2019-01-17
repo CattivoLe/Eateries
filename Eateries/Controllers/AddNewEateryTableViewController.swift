@@ -39,9 +39,9 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
             self.present(alert, animated: true, completion: nil)
             print("Не заполнены поля")
         } else {
-            
+            // MARK: - CoreData Save
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext {
-                let restaurant = Restaurant(context: context)
+                let restaurant = Restaurant(context: context) // Экземпляр класса в контексте
                 restaurant.name = nameTextField.text
                 restaurant.type = typeTextField.text
                 restaurant.location = adresTextField.text
@@ -49,15 +49,13 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
                 if let image = imageView.image {
                     restaurant.image = UIImage.pngData(image)()
                 }
-                
-                do {
+                do { // Сохраняем контекст
                     try context.save()
                     print("Сохранено")
                 } catch let error as NSError {
                     print("Не удалось сохранить данные \(error), \(error.userInfo)")
                 }
             }
-            
             performSegue(withIdentifier: "unwindSegueFromNew", sender: self)
         }
     }
