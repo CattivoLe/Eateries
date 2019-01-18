@@ -17,6 +17,9 @@ class PageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
+        if let firstVC = displayViewController(atIndex: 0) {
+            setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+        }
     }
     
     func displayViewController(atIndex index: Int) -> ContentViewController? {
@@ -45,4 +48,12 @@ extension PageViewController: UIPageViewControllerDataSource {
         index += 1
         return displayViewController(atIndex: index)
     }
+    
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return headersArray.count
+//    }
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        let contentVC = storyboard?.instantiateViewController(withIdentifier: "contentViewControler") as? ContentViewController
+//        return contentVC!.index
+//    }
 }

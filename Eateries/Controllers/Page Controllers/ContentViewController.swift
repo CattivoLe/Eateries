@@ -13,6 +13,7 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var subHeaderLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var header = ""
     var subHeader = ""
@@ -21,5 +22,10 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerLabel.text = header
+        subHeaderLabel.text = subHeader
+        imageView.image = UIImage(named: imageFile)
+        pageControl.numberOfPages = 2
+        pageControl.currentPage = index
     }
 }

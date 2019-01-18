@@ -557,7 +557,7 @@
         <!--Page View Controller-->
         <scene sceneID="wuO-uB-Cgu">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="RlZ-IZ-RUt" customClass="PageViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RlZ-IZ-RUt" customClass="PageViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HZ-DK-rfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1638" y="-576"/>
@@ -570,31 +570,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87o-SX-KC0">
-                                <rect key="frame" x="16" y="66" width="343" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87o-SX-KC0">
+                                <rect key="frame" x="0.0" y="58" width="375" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95x-et-HSk">
-                                <rect key="frame" x="0.0" y="264" width="375" height="403"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95x-et-HSk">
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="95x-et-HSk" secondAttribute="height" multiplier="15:16" id="Mpy-vc-CxP"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SubHeader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0t-fU-x00">
-                                <rect key="frame" x="16" y="143" width="343" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IP3-cb-gYt">
+                                <rect key="frame" x="168" y="630" width="39" height="37"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubHeader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0t-fU-x00">
+                                <rect key="frame" x="0.0" y="133" width="375" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="uzh-fe-UHH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="87o-SX-KC0" firstAttribute="trailing" secondItem="5KG-6C-pSk" secondAttribute="trailing" id="2GV-M8-KgW"/>
+                            <constraint firstItem="87o-SX-KC0" firstAttribute="leading" secondItem="5KG-6C-pSk" secondAttribute="leading" id="5x7-ct-eGz"/>
+                            <constraint firstItem="95x-et-HSk" firstAttribute="leading" secondItem="5KG-6C-pSk" secondAttribute="leading" id="Eoy-iH-W6q"/>
+                            <constraint firstItem="87o-SX-KC0" firstAttribute="top" secondItem="5KG-6C-pSk" secondAttribute="top" constant="38" id="QXp-d2-aID"/>
+                            <constraint firstItem="5KG-6C-pSk" firstAttribute="bottom" secondItem="IP3-cb-gYt" secondAttribute="bottom" id="Qop-yW-4cw"/>
+                            <constraint firstItem="IP3-cb-gYt" firstAttribute="centerX" secondItem="5KG-6C-pSk" secondAttribute="centerX" id="Rdn-11-5lb"/>
+                            <constraint firstItem="95x-et-HSk" firstAttribute="bottom" secondItem="5KG-6C-pSk" secondAttribute="bottom" id="W5v-An-hZj"/>
+                            <constraint firstItem="Z0t-fU-x00" firstAttribute="leading" secondItem="5KG-6C-pSk" secondAttribute="leading" id="WWu-9h-fCz"/>
+                            <constraint firstItem="95x-et-HSk" firstAttribute="trailing" secondItem="5KG-6C-pSk" secondAttribute="trailing" id="kxd-TD-S4b"/>
+                            <constraint firstItem="Z0t-fU-x00" firstAttribute="top" secondItem="87o-SX-KC0" secondAttribute="bottom" constant="43.5" id="w2B-4P-Ra2"/>
+                            <constraint firstItem="Z0t-fU-x00" firstAttribute="trailing" secondItem="5KG-6C-pSk" secondAttribute="trailing" id="yMd-6r-otA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5KG-6C-pSk"/>
                     </view>
                     <connections>
                         <outlet property="headerLabel" destination="87o-SX-KC0" id="t6n-g9-1uA"/>
                         <outlet property="imageView" destination="95x-et-HSk" id="zt0-HF-xkz"/>
+                        <outlet property="pageControl" destination="IP3-cb-gYt" id="grw-gd-0uw"/>
                         <outlet property="subHeaderLabel" destination="Z0t-fU-x00" id="jVO-1C-mDY"/>
                     </connections>
                 </viewController>

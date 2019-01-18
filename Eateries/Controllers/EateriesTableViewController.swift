@@ -52,6 +52,13 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
             }
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController {
+            present(pageViewController, animated: true, completion: nil) // Отобразить PageViewController
+        }
+    }
     
     @IBAction func close(segue: UIStoryboardSegue) {
     }
