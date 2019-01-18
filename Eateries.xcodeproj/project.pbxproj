@@ -10,10 +10,12 @@
 		11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */; };
 		1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */; };
 		1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA8121EBF321005DE98E /* RateViewController.swift */; };
+		1147A52321F1DB66007B5B57 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147A52221F1DB66007B5B57 /* PageViewController.swift */; };
 		11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689FE421ECA8CB00E64C2E /* MapViewController.swift */; };
 		11689FE821ECA95300E64C2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11689FE721ECA95300E64C2E /* MapKit.framework */; };
 		1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD3E21F07EE700133A9E /* CoreDataStack.swift */; };
 		1183CD4221F0812200133A9E /* Eateries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD4021F0812200133A9E /* Eateries.xcdatamodeld */; };
+		1190F66621F1D5E800F011D2 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190F66521F1D5E800F011D2 /* ContentViewController.swift */; };
 		11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */; };
 		11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5421EB28AB00E1B151 /* Main.storyboard */; };
 		11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0EF5721EB28AC00E1B151 /* Assets.xcassets */; };
@@ -27,10 +29,12 @@
 		11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEateryTableViewController.swift; sourceTree = "<group>"; };
 		1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1116BA8121EBF321005DE98E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		1147A52221F1DB66007B5B57 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		11689FE421ECA8CB00E64C2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		11689FE721ECA95300E64C2E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1183CD3E21F07EE700133A9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1183CD4121F0812200133A9E /* EateriesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EateriesModel.xcdatamodel; sourceTree = "<group>"; };
+		1190F66521F1D5E800F011D2 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		11A0EF4D21EB28AB00E1B151 /* Eateries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eateries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A0EF5021EB28AB00E1B151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11A0EF5521EB28AB00E1B151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 				11689FE721ECA95300E64C2E /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1190F66921F1D62F00F011D2 /* Page Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1190F66521F1D5E800F011D2 /* ContentViewController.swift */,
+				1147A52221F1DB66007B5B57 /* PageViewController.swift */,
+			);
+			path = "Page Controllers";
 			sourceTree = "<group>";
 		};
 		11A0EF4421EB28AB00E1B151 = {
@@ -112,6 +125,7 @@
 				1116BA8121EBF321005DE98E /* RateViewController.swift */,
 				11689FE421ECA8CB00E64C2E /* MapViewController.swift */,
 				11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */,
+				1190F66921F1D62F00F011D2 /* Page Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,11 +209,13 @@
 				11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */,
 				11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */,
 				1183CD4221F0812200133A9E /* Eateries.xcdatamodeld in Sources */,
+				1147A52321F1DB66007B5B57 /* PageViewController.swift in Sources */,
 				11A0EF5121EB28AB00E1B151 /* AppDelegate.swift in Sources */,
 				11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */,
 				1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */,
 				1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */,
 				11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */,
+				1190F66621F1D5E800F011D2 /* ContentViewController.swift in Sources */,
 				1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */,
 				11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */,
 			);
