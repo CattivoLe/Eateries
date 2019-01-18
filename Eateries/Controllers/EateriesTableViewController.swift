@@ -26,7 +26,10 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         searchController = UISearchController(searchResultsController: nil) // Отображать результат в текущем контроллере
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false // Затемнять контролер при вводе
+        searchController.searchBar.barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true // Не отображать строку поиска на следующем экране
         // MARK: -  Подстройка таблицы
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.estimatedRowHeight = 85 // Размер ячейки
@@ -160,5 +163,15 @@ extension EateiesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentFor(searchText: searchController.searchBar.text!)
         tableView.reloadData()
+    }
+}
+extension EateiesTableViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if searchBar.text == "" {
+            navigationController?.hidesBarsOnSwipe = false
+        }
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        navigationController?.hidesBarsOnSwipe = true
     }
 }
