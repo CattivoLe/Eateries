@@ -54,6 +54,10 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let userDefaults = UserDefaults.standard
+        let wasIntroWatched = userDefaults.bool(forKey: "wasIntroWatched")
+        
+        guard !wasIntroWatched else { return }
         
         if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController {
             present(pageViewController, animated: true, completion: nil) // Отобразить PageViewController
