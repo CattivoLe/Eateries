@@ -11,6 +11,7 @@
 		1116BA8021EBCCA4005DE98E /* EateriesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */; };
 		1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116BA8121EBF321005DE98E /* RateViewController.swift */; };
 		1147A52321F1DB66007B5B57 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147A52221F1DB66007B5B57 /* PageViewController.swift */; };
+		1147F15A21F711A8001A7724 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147F15921F711A8001A7724 /* AboutTableViewController.swift */; };
 		11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689FE421ECA8CB00E64C2E /* MapViewController.swift */; };
 		11689FE821ECA95300E64C2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11689FE721ECA95300E64C2E /* MapKit.framework */; };
 		1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD3E21F07EE700133A9E /* CoreDataStack.swift */; };
@@ -30,6 +31,7 @@
 		1116BA7F21EBCCA4005DE98E /* EateriesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1116BA8121EBF321005DE98E /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		1147A52221F1DB66007B5B57 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		1147F15921F711A8001A7724 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		11689FE421ECA8CB00E64C2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		11689FE721ECA95300E64C2E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1183CD3E21F07EE700133A9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1116BA8121EBF321005DE98E /* RateViewController.swift */,
 				11689FE421ECA8CB00E64C2E /* MapViewController.swift */,
 				11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */,
+				1147F15921F711A8001A7724 /* AboutTableViewController.swift */,
 				1190F66921F1D62F00F011D2 /* Page Controllers */,
 			);
 			path = Controllers;
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11007C2D21ED171E00DB5B1D /* AddNewEateryTableViewController.swift in Sources */,
+				1147F15A21F711A8001A7724 /* AboutTableViewController.swift in Sources */,
 				11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */,
 				1183CD4221F0812200133A9E /* Eateries.xcdatamodeld in Sources */,
 				1147A52321F1DB66007B5B57 /* PageViewController.swift in Sources */,
