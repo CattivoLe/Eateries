@@ -14,6 +14,7 @@
 		1147F15A21F711A8001A7724 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147F15921F711A8001A7724 /* AboutTableViewController.swift */; };
 		1147F15C21F71B67001A7724 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147F15B21F71B67001A7724 /* WebViewController.swift */; };
 		1147F15F21F73341001A7724 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1147F15E21F73341001A7724 /* CloudKit.framework */; };
+		1147F16121F769FC001A7724 /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1147F16021F769FC001A7724 /* PopularTableViewController.swift */; };
 		11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689FE421ECA8CB00E64C2E /* MapViewController.swift */; };
 		11689FE821ECA95300E64C2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11689FE721ECA95300E64C2E /* MapKit.framework */; };
 		1183CD3F21F07EE700133A9E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183CD3E21F07EE700133A9E /* CoreDataStack.swift */; };
@@ -37,6 +38,7 @@
 		1147F15B21F71B67001A7724 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1147F15D21F7333B001A7724 /* Eateries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eateries.entitlements; sourceTree = "<group>"; };
 		1147F15E21F73341001A7724 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1147F16021F769FC001A7724 /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
 		11689FE421ECA8CB00E64C2E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		11689FE721ECA95300E64C2E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1183CD3E21F07EE700133A9E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				11007C2C21ED171E00DB5B1D /* AddNewEateryTableViewController.swift */,
 				1147F15921F711A8001A7724 /* AboutTableViewController.swift */,
 				1147F15B21F71B67001A7724 /* WebViewController.swift */,
+				1147F16021F769FC001A7724 /* PopularTableViewController.swift */,
 				1190F66921F1D62F00F011D2 /* Page Controllers */,
 			);
 			path = Controllers;
@@ -238,6 +241,7 @@
 				1147F15C21F71B67001A7724 /* WebViewController.swift in Sources */,
 				1116BA8221EBF321005DE98E /* RateViewController.swift in Sources */,
 				11689FE521ECA8CB00E64C2E /* MapViewController.swift in Sources */,
+				1147F16121F769FC001A7724 /* PopularTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
