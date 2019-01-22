@@ -18,7 +18,6 @@ class RateViewController: UIViewController {
     
     // MARK: - Кнопки рейтинга
     @IBAction func rateRestourantButtons(sender: UIButton) {
-        
         switch sender.tag {
         case 0:
             restRating = "bad"
@@ -42,6 +41,7 @@ class RateViewController: UIViewController {
             }, completion: nil)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: - Анимация, стартовая позиция
@@ -55,5 +55,4 @@ class RateViewController: UIViewController {
         blurEffectView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.view.insertSubview(blurEffectView, at: 1)
     }
-    
 }

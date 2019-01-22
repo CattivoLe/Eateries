@@ -17,10 +17,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: - Geocoder stack
         mapView.delegate = self
-        
         let geocoder = CLGeocoder() // Конверирует координаты в строку и наоборот
-        
         geocoder.geocodeAddressString(restaurant.location!) { (placemarks, error) in // Передаем адрес ресторана
             guard error == nil else { return } // Проверяем на ошибки
             guard let placemarks = placemarks else { return } // Проверяем что получили координаты
@@ -55,5 +54,4 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         annotatioView?.pinTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         return annotatioView
     }
-    
 }

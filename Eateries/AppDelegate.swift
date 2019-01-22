@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Фон статус бара
         let statusBarBackground = UIView(frame: (CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20)))
         statusBarBackground.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-        self.window?.rootViewController?.view.insertSubview(statusBarBackground, at: 1)
+        self.window?.rootViewController?.view.insertSubview(statusBarBackground, at: 0) // Номер слоя
         
         return true
     }

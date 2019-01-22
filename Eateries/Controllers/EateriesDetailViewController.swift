@@ -81,5 +81,4 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
             dvc.restaurant = self.restourant
         }
     }
-
 }

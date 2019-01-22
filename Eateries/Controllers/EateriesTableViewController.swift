@@ -25,7 +25,7 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         // MARK: - Search Controller
         searchController = UISearchController(searchResultsController: nil) // Отображать результат в текущем контроллере
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false // Затемнять контролер при вводе
+        searchController.dimsBackgroundDuringPresentation = false // Не затемнять контролер при вводе
         searchController.searchBar.barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.delegate = self
@@ -36,7 +36,6 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         tableView.rowHeight = UITableView.automaticDimension // Авторазмер ячейки
         // MARK: - Скрыть текст кнопки назад
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
         // MARK: - CoreData Load
         let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest() // Запрос
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true) // Фильтр
@@ -58,7 +57,6 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
         let wasIntroWatched = userDefaults.bool(forKey: "wasIntroWatched")
         
         guard !wasIntroWatched else { return }
-        
         if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "pageViewController") as? PageViewController {
             present(pageViewController, animated: true, completion: nil) // Отобразить PageViewController
         }
@@ -153,7 +151,6 @@ class EateiesTableViewController: UITableViewController, NSFetchedResultsControl
                 }
             }
         }
-        
         share.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         delite.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         

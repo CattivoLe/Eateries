@@ -102,7 +102,5 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
             imagePicker.sourceType = source // Камера иди библиотека картинок
             self.present(imagePicker, animated: true, completion: nil)
         }
-    }
-
-    
+    }    
 }
