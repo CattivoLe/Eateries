@@ -489,7 +489,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDJ-OI-8gK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="853"/>
+            <point key="canvasLocation" x="1449" y="852"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="aYq-ji-gPg">
@@ -504,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQm-24-Znw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="852"/>
+            <point key="canvasLocation" x="2225" y="853"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l2X-Nr-hlI">
@@ -521,7 +521,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lut-NF-qVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="854"/>
+            <point key="canvasLocation" x="697" y="852"/>
         </scene>
         <!--Rate View Controller-->
         <scene sceneID="c2r-qu-A8S">
@@ -632,7 +632,7 @@
             </objects>
             <point key="canvasLocation" x="-750" y="134"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Популярные-->
         <scene sceneID="Bzr-k1-Gtg">
             <objects>
                 <tableViewController id="rUf-rn-o6n" sceneMemberID="viewController">
@@ -655,7 +655,7 @@
                             <outlet property="delegate" destination="rUf-rn-o6n" id="bW5-tb-Bor"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="MXN-Kk-5we"/>
+                    <navigationItem key="navigationItem" title="Популярные" id="MXN-Kk-5we"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j4-Bm-KLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -787,6 +787,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kXL-dl-gLy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="01q-hf-8Eq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
