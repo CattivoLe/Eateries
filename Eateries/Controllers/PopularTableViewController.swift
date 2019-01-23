@@ -21,21 +21,48 @@ class PopularTableViewController: UITableViewController {
     }
     
     // MARK: - iCloud getData Stack
-    func getCloudRecords() { // Получить записи из облака
+    func getCloudRecords() {
+        
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Restaurant", predicate: predicate)
-        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
-            guard error == nil else {
-               print(error!)
-                return
-            }
-            if let records = records {
-                self.restaurants = records
-                DispatchQueue.main.async { // Выполнить обновление таблицы в основном потоке
-                    self.tableView.reloadData()
-                }
+        
+        //let sort = NSSortDescriptor(key: "creationDate", ascending: false)
+        //query.sortDescriptors = [sort] // Применить сортировку
+        
+        let queryOperation = CKQueryOperation(query: query)
+        queryOperation.desiredKeys = ["name","image"] // Получить данные по ключам
+        queryOperation.resultsLimit = 10
+        queryOperation.queuePriority = .veryHigh
+        queryOperation.recordFetchedBlock = { (record: CKRecord!) in
+            if let record = record {
+                self.restaurants.append(record)
             }
         }
+        queryOperation.queryCompletionBlock = { (cursor, error) in
+            guard error == nil else {
+                print("Не удалось получить данные из iCloud\(error!.localizedDescription)")
+                return
+            }
+            print("Данные получены")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        publicDataBase.add(queryOperation)
+
+//        Получение всех данных сразу
+//        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
+//            guard error == nil else {
+//               print(error!)
+//                return
+//            }
+//            if let records = records {
+//                self.restaurants = records
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
 
     // MARK: - Table view data source
