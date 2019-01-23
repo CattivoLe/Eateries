@@ -13,9 +13,22 @@ class PopularTableViewController: UITableViewController {
     
     var restaurants: [CKRecord] = []
     var publicDataBase = CKContainer.default().publicCloudDatabase
+    var spinner: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: - ActivityIndicator Stack
+        spinner = UIActivityIndicatorView(style: .whiteLarge)
+        spinner.translatesAutoresizingMaskIntoConstraints = false // Не проставлять авто ограничения
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        tableView.addSubview(spinner)
+        
+        //spinner.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        //spinner.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
+        NSLayoutConstraint(item: spinner, attribute: .centerX, relatedBy: .equal, toItem: tableView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: spinner, attribute: .centerY, relatedBy: .equal, toItem: tableView, attribute: .centerY, multiplier: 0.85, constant: 0).isActive = true
+        
         getCloudRecords()
         tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
     }
@@ -81,6 +94,7 @@ class PopularTableViewController: UITableViewController {
                     if let data = data {
                         DispatchQueue.main.async {
                             cell.imageView?.image = UIImage(data: data)
+                            self.spinner.stopAnimating()
                         }
                     }
                 }
