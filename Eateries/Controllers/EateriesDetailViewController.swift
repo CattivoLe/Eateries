@@ -36,7 +36,7 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         rateButton.layer.borderColor = UIColor.white.cgColor
         
         // MARK: -  Подстройка таблицы
-        tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         tableView.estimatedRowHeight = 38 // Размер ячейки
         tableView.rowHeight = UITableView.automaticDimension // Автоматический размер ячейки
         tableView.tableFooterView = UIView(frame: CGRect.zero) // Скрыть неиспользуемую часть таблицы

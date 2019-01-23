@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         // Шрифт и цвет текста заголовка
         if let barFont = UIFont(name: "AppleSDGothicNeo-Light", size: 24) {
@@ -25,11 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // TabBar Settings
         UITabBar.appearance().tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         
         // Фон статус бара
         let statusBarBackground = UIView(frame: (CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 20)))
-        statusBarBackground.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        statusBarBackground.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         self.window?.rootViewController?.view.insertSubview(statusBarBackground, at: 0) // Номер слоя
         
         return true

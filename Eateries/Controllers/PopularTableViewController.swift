@@ -20,7 +20,7 @@ class PopularTableViewController: UITableViewController {
         super.viewDidLoad()
         //MARK: - RefreshControl
         refreshControl = UIRefreshControl()
-        refreshControl?.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        refreshControl?.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         refreshControl?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         refreshControl?.addTarget(self, action: #selector(getCloudRecords), for: .valueChanged)
         
@@ -37,7 +37,7 @@ class PopularTableViewController: UITableViewController {
         NSLayoutConstraint(item: spinner, attribute: .centerY, relatedBy: .equal, toItem: tableView, attribute: .centerY, multiplier: 0.85, constant: 0).isActive = true
         
         getCloudRecords()
-        tableView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
     }
     
     // MARK: - iCloud getData Stack

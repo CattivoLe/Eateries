@@ -22,7 +22,7 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
     
     @IBAction func toggelIsVisitedPressed(_ sender: UIButton) {
         if sender == yesButton {
-            sender.backgroundColor = #colorLiteral(red: 0, green: 0.7301866559, blue: 0, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 1, green: 0.5865499377, blue: 0, alpha: 1)
             noButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             visitedStatus = true
         } else {
@@ -100,7 +100,7 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        yesButton.backgroundColor = #colorLiteral(red: 0, green: 0.7301866559, blue: 0, alpha: 1)
+        yesButton.backgroundColor = #colorLiteral(red: 1, green: 0.5865499377, blue: 0, alpha: 1)
         noButton.backgroundColor = #colorLiteral(red: 0.7344238162, green: 0.1379992366, blue: 0.148756355, alpha: 1)
     }
     
