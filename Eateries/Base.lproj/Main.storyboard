@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Рестораны-->
+        <!--Restaurans-->
         <scene sceneID="2vM-TJ-5hd">
             <objects>
                 <tableViewController id="Eea-Ux-XpR" customClass="EateiesTableViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,7 +80,7 @@
                             <outlet property="delegate" destination="Eea-Ux-XpR" id="UA0-gf-Xi3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Рестораны" id="0Fm-FR-XwW">
+                    <navigationItem key="navigationItem" title="Restaurans" id="0Fm-FR-XwW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dhb-yZ-4Nx">
                             <connections>
                                 <segue destination="3DJ-yT-S8F" kind="presentation" identifier="addNewEaterySegue" modalTransitionStyle="crossDissolve" id="YG9-7W-SzN"/>
@@ -130,13 +130,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-cf-ODL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-cf-ODL">
                                                     <rect key="frame" x="16" y="11" width="343" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название ресторана" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H09-g8-vIe">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="The name of the restaurant" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H09-g8-vIe">
                                                     <rect key="frame" x="16" y="48" width="343" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="CY1-Ve-GfI"/>
@@ -163,13 +163,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptc-e2-guT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptc-e2-guT">
                                                     <rect key="frame" x="16" y="8" width="343" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес ресторана" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-ag-cWH">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-ag-cWH">
                                                     <rect key="frame" x="16" y="45" width="343" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="FBM-3x-95R"/>
@@ -196,13 +196,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тип" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP6-gN-8rA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP6-gN-8rA">
                                                     <rect key="frame" x="16" y="8" width="343" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип ресторана" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-Xh-Ybw">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type of restaurant" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-Xh-Ybw">
                                                     <rect key="frame" x="16" y="45" width="343" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="611-hq-ifI"/>
@@ -229,7 +229,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы там были?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-79-yUW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You were there?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peH-79-yUW">
                                                     <rect key="frame" x="16" y="8" width="343" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -241,7 +241,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="wa7-tJ-jPT" secondAttribute="height" multiplier="2:1" id="IYX-qn-WdK"/>
                                                     </constraints>
-                                                    <state key="normal" title="Да">
+                                                    <state key="normal" title="Yes">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -251,7 +251,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-JF-HuF">
                                                     <rect key="frame" x="84" y="39" width="60" height="30"/>
                                                     <color key="backgroundColor" red="0.67010116580000001" green="0.064724392359999994" blue="0.1141929626" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Нет">
+                                                    <state key="normal" title="No">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -446,7 +446,7 @@
             </objects>
             <point key="canvasLocation" x="1450" y="134"/>
         </scene>
-        <!--Ссылки-->
+        <!--About-->
         <scene sceneID="6vi-q7-u7A">
             <objects>
                 <tableViewController id="WOk-cK-H7N" customClass="AboutTableViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
@@ -482,7 +482,7 @@
                             <outlet property="delegate" destination="WOk-cK-H7N" id="6Np-fz-JSF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ссылки" id="o5r-gA-SVJ"/>
+                    <navigationItem key="navigationItem" title="About" id="o5r-gA-SVJ"/>
                     <connections>
                         <segue destination="mIJ-Jc-y3P" kind="show" identifier="showWebPageSegue" id="xFz-Ks-IFE"/>
                     </connections>
@@ -534,7 +534,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rateBackground" translatesAutoresizingMaskIntoConstraints="NO" id="i5N-mZ-4Db">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как вам у нас?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K13-ds-45Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How about us?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K13-ds-45Z">
                                 <rect key="frame" x="73" y="168" width="229" height="42.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="K13-ds-45Z" secondAttribute="height" multiplier="113:21" id="eNP-JC-kuQ"/>
@@ -632,7 +632,7 @@
             </objects>
             <point key="canvasLocation" x="-750" y="134"/>
         </scene>
-        <!--Популярные-->
+        <!--Most Viewed-->
         <scene sceneID="Bzr-k1-Gtg">
             <objects>
                 <tableViewController id="rUf-rn-o6n" customClass="PopularTableViewController" customModule="Eateries" customModuleProvider="target" sceneMemberID="viewController">
@@ -655,7 +655,7 @@
                             <outlet property="delegate" destination="rUf-rn-o6n" id="bW5-tb-Bor"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Популярные" id="MXN-Kk-5we"/>
+                    <navigationItem key="navigationItem" title="Most Viewed" id="MXN-Kk-5we"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j4-Bm-KLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
