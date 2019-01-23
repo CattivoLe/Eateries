@@ -47,8 +47,8 @@ class PopularTableViewController: UITableViewController {
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Restaurant", predicate: predicate)
         
-        //let sort = NSSortDescriptor(key: "creationDate", ascending: false)
-        //query.sortDescriptors = [sort] // Применить сортировку
+        let sort = NSSortDescriptor(key: "creationDate", ascending: false)
+        query.sortDescriptors = [sort] // Применить сортировку
         let queryOperation = CKQueryOperation(query: query)
         queryOperation.desiredKeys = ["name"] // Получить данные по ключам
         queryOperation.resultsLimit = 10

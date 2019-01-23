@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class AddNewEateryTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -55,8 +56,45 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
                 } catch let error as NSError {
                     print("Не удалось сохранить данные \(error), \(error.userInfo)")
                 }
+                saveToCloud(restaurant) // Cloud
             }
             performSegue(withIdentifier: "unwindSegueFromNew", sender: self)
+        }
+    }
+    
+    // MARK: - Сохранение ресторана в ICloud
+    func saveToCloud(_ restaurant: Restaurant) {
+        let restRecord = CKRecord(recordType: "Restaurant") // Запись в облаке
+        restRecord.setValue(nameTextField.text, forKey: "name")
+        restRecord.setValue(typeTextField.text, forKey: "type")
+        restRecord.setValue(adresTextField.text, forKey: "location")
+        // Подготовка к загрузке картинки
+        guard let originalImage = UIImage(data: restaurant.image! as Data) else { return } // Получить изображение из CoreData
+        let scale = originalImage.size.width > 1080.0 ? 1080.0 / originalImage.size.width : 1.0
+        let scaledImage = UIImage(data: (restaurant.image! as Data), scale: scale)
+        let imageFilePath = NSTemporaryDirectory() + restaurant.name!
+        let imageFileURL = URL(fileURLWithPath: imageFilePath)
+        
+        do {
+            try scaledImage?.jpegData(compressionQuality: 0.7)?.write(to: imageFileURL, options: .atomic)// Сохранить в JPG
+        } catch {
+            print(error.localizedDescription)
+        }
+        let imageAsset = CKAsset(fileURL: imageFileURL)
+        
+        restRecord.setValue(imageAsset, forKey: "image")
+        // Загрузка данных в ICloud
+        let publicDataBase = CKContainer.default().publicCloudDatabase
+        publicDataBase.save(restRecord) { (record, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            do { // Удалить ранее сохраненную картинку из памяти
+                try FileManager.default.removeItem(at: imageFileURL)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
