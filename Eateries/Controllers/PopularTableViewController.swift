@@ -14,6 +14,7 @@ class PopularTableViewController: UITableViewController {
     var restaurants: [CKRecord] = []
     var publicDataBase = CKContainer.default().publicCloudDatabase
     var spinner: UIActivityIndicatorView!
+    var cache = NSCache<CKRecord.ID, AnyObject>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,7 @@ class PopularTableViewController: UITableViewController {
             print("Данные получены")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.spinner.stopAnimating()
             }
         }
         publicDataBase.add(queryOperation)
@@ -79,6 +81,12 @@ class PopularTableViewController: UITableViewController {
         cell.textLabel?.text = restaurant.object(forKey: "name") as? String
         cell.imageView?.image = UIImage(named: "photo") // Картинка из ассетов пока не загрузятся данные
         
+        if let imageURL = cache.object(forKey: restaurant.recordID) as? URL { // Читать из кэша
+            if let data = try? Data(contentsOf: imageURL) {
+                cell.imageView?.image = UIImage(data: data)
+            }
+        } else {
+            
         let fetchRecordOper = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
         fetchRecordOper.desiredKeys = ["image"]
         fetchRecordOper.queuePriority = .veryHigh
@@ -94,13 +102,14 @@ class PopularTableViewController: UITableViewController {
                     if let data = data {
                         DispatchQueue.main.async {
                             cell.imageView?.image = UIImage(data: data)
-                            self.spinner.stopAnimating()
+                            self.cache.setObject(image.fileURL as AnyObject, forKey: restaurant.recordID) // Запись в кэш
                         }
                     }
                 }
             }
         }
         publicDataBase.add(fetchRecordOper)
+        }
         cell.backgroundColor = UIColor.clear // Прозрачная ячейка
         return cell
     }
