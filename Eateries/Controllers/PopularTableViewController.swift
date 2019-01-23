@@ -30,7 +30,7 @@ class PopularTableViewController: UITableViewController {
         //query.sortDescriptors = [sort] // Применить сортировку
         
         let queryOperation = CKQueryOperation(query: query)
-        queryOperation.desiredKeys = ["name","image"] // Получить данные по ключам
+        queryOperation.desiredKeys = ["name"] // Получить данные по ключам
         queryOperation.resultsLimit = 10
         queryOperation.queuePriority = .veryHigh
         queryOperation.recordFetchedBlock = { (record: CKRecord!) in
@@ -49,20 +49,6 @@ class PopularTableViewController: UITableViewController {
             }
         }
         publicDataBase.add(queryOperation)
-
-//        Получение всех данных сразу
-//        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
-//            guard error == nil else {
-//               print(error!)
-//                return
-//            }
-//            if let records = records {
-//                self.restaurants = records
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
     }
 
     // MARK: - Table view data source
@@ -78,15 +64,30 @@ class PopularTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let restaurant = restaurants[indexPath.row]
         cell.textLabel?.text = restaurant.object(forKey: "name") as? String
-        if let image = restaurant.object(forKey: "image") {
-            let image = image as! CKAsset
-            let data = try? Data(contentsOf: image.fileURL)
-            if let data = data {
-                cell.imageView?.image = UIImage(data: data)
+        cell.imageView?.image = UIImage(named: "photo") // Картинка из ассетов пока не загрузятся данные
+        
+        let fetchRecordOper = CKFetchRecordsOperation(recordIDs: [restaurant.recordID])
+        fetchRecordOper.desiredKeys = ["image"]
+        fetchRecordOper.queuePriority = .veryHigh
+        fetchRecordOper.perRecordCompletionBlock = { (record, recordID, error) in
+            guard error == nil else {
+                print("Не удалось загрузить изображение из Icloud")
+                return
+            }
+            if let record = record {
+                if let image = record.object(forKey: "image") {
+                    let image = image as! CKAsset
+                    let data = try? Data(contentsOf: image.fileURL)
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            cell.imageView?.image = UIImage(data: data)
+                        }
+                    }
+                }
             }
         }
+        publicDataBase.add(fetchRecordOper)
         cell.backgroundColor = UIColor.clear // Прозрачная ячейка
         return cell
     }
-
 }
