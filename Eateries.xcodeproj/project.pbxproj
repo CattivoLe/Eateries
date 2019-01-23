@@ -27,6 +27,7 @@
 		11A0EF6321EB299400E1B151 /* EateriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */; };
 		11A0EF6521EB2EC800E1B151 /* EateriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */; };
 		11A0EF6821EB81E700E1B151 /* EateriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */; };
+		11A8F86021F89F4900D07AE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11A8F86221F89F4900D07AE7 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		11A0EF6221EB299400E1B151 /* EateriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewController.swift; sourceTree = "<group>"; };
 		11A0EF6421EB2EC800E1B151 /* EateriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesTableViewCell.swift; sourceTree = "<group>"; };
 		11A0EF6721EB81E700E1B151 /* EateriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateriesDetailViewController.swift; sourceTree = "<group>"; };
+		11A8F85D21F89C7700D07AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		11A8F86121F89F4900D07AE7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 				11A0EF5721EB28AC00E1B151 /* Assets.xcassets */,
 				1183CD4021F0812200133A9E /* Eateries.xcdatamodeld */,
 				1147F15D21F7333B001A7724 /* Eateries.entitlements */,
+				11A8F86221F89F4900D07AE7 /* Localizable.strings */,
 				11A0EF5C21EB28AC00E1B151 /* Info.plist */,
 			);
 			path = Eateries;
@@ -215,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A0EF5B21EB28AC00E1B151 /* LaunchScreen.storyboard in Resources */,
+				11A8F86021F89F4900D07AE7 /* Localizable.strings in Resources */,
 				11A0EF5821EB28AC00E1B151 /* Assets.xcassets in Resources */,
 				11A0EF5621EB28AB00E1B151 /* Main.storyboard in Resources */,
 			);
@@ -252,6 +257,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				11A0EF5521EB28AB00E1B151 /* Base */,
+				11A8F85D21F89C7700D07AE7 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -262,6 +268,14 @@
 				11A0EF5A21EB28AC00E1B151 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		11A8F86221F89F4900D07AE7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A8F86121F89F4900D07AE7 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Eateries
+
+  Created by Alexander Omelchuk on 23.01.2019.
+  Copyright © 2019 Александр Омельчук. All rights reserved.
+*/
+
+"Выбрать картинку" = "Choose a picture";
+"Не все поля заполнены" = "Not all fields are filled";

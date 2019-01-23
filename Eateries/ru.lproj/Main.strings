@@ -1,0 +1,66 @@
+
+/* Class = "UINavigationItem"; title = "Restaurans"; ObjectID = "0Fm-FR-XwW"; */
+"0Fm-FR-XwW.title" = "Рестораны";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "3hO-iM-k8L"; */
+"3hO-iM-k8L.text" = "Значение";
+
+/* Class = "UITextField"; placeholder = "Type of restaurant"; ObjectID = "3mG-Xh-Ybw"; */
+"3mG-Xh-Ybw.placeholder" = "Тип заведения";
+
+/* Class = "UILabel"; text = "Header"; ObjectID = "87o-SX-KC0"; */
+"87o-SX-KC0.text" = "Header";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "8AV-2u-7nE"; */
+"8AV-2u-7nE.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "Edd-JF-HuF"; */
+"Edd-JF-HuF.normalTitle" = "Нет";
+
+/* Class = "UITextField"; placeholder = "The name of the restaurant"; ObjectID = "H09-g8-vIe"; */
+"H09-g8-vIe.placeholder" = "Название заведения";
+
+/* Class = "UILabel"; text = "How about us?"; ObjectID = "K13-ds-45Z"; */
+"K13-ds-45Z.text" = "Как вам у нас?";
+
+/* Class = "UINavigationItem"; title = "Most Viewed"; ObjectID = "MXN-Kk-5we"; */
+"MXN-Kk-5we.title" = "Популярные";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "Ptc-e2-guT"; */
+"Ptc-e2-guT.text" = "Адрес";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "UiU-6h-XEW"; */
+"UiU-6h-XEW.text" = "Тип";
+
+/* Class = "UITextField"; placeholder = "Restaurant address"; ObjectID = "VPY-ag-cWH"; */
+"VPY-ag-cWH.placeholder" = "Адрес заведения";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "XPg-wK-ncn"; */
+"XPg-wK-ncn.text" = "Название";
+
+/* Class = "UILabel"; text = "SubHeader"; ObjectID = "Z0t-fU-x00"; */
+"Z0t-fU-x00.text" = "SubHeader";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "kP6-gN-8rA"; */
+"kP6-gN-8rA.text" = "Тип";
+
+/* Class = "UILabel"; text = "Key"; ObjectID = "mmI-ih-OXI"; */
+"mmI-ih-OXI.text" = "Key";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "o5r-gA-SVJ"; */
+"o5r-gA-SVJ.title" = "Прочее";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "oZR-cf-ODL"; */
+"oZR-cf-ODL.text" = "Название";
+
+/* Class = "UILabel"; text = "You were there?"; ObjectID = "peH-79-yUW"; */
+"peH-79-yUW.text" = "Вы там были?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r6U-ix-KKM"; */
+"r6U-ix-KKM.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "wa7-tJ-jPT"; */
+"wa7-tJ-jPT.normalTitle" = "Да";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "wiM-bC-BuQ"; */
+"wiM-bC-BuQ.text" = "Адрес";

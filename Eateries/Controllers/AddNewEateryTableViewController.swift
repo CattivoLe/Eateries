@@ -34,7 +34,7 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         if nameTextField.text == "" || adresTextField.text == "" || typeTextField.text == "" {
-            let alert = UIAlertController(title: "Упсc..", message: "Не все поля заполнены", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Упсc..", message: NSLocalizedString("Не все поля заполнены", comment: "Не все поля заполнены"), preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
@@ -114,7 +114,7 @@ class AddNewEateryTableViewController: UITableViewController, UIImagePickerContr
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             // MARK: - Аллерт выбор картинки
-            let alertController = UIAlertController(title: "Выбрать картинку", message: nil, preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: NSLocalizedString("Выбрать картинку", comment: "Выбрать картинку"), message: nil, preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Камера", style: .default) { (action) in
                 self.chooseImagePickerAction(source: .camera)

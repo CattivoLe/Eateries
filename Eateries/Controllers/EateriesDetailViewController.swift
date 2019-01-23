@@ -54,17 +54,17 @@ class EateiesDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         switch indexPath.row {
         case 0:
-            cell.keyLabel.text = "Название"
+            cell.keyLabel.text = "Name"
             cell.valueLabel.text = restourant!.name
         case 1:
-            cell.keyLabel.text = "Тип"
+            cell.keyLabel.text = "Type"
             cell.valueLabel.text = restourant!.type
         case 2:
-            cell.keyLabel.text = "Адрес"
+            cell.keyLabel.text = "Address"
             cell.valueLabel.text = restourant!.location
         case 3:
-            cell.keyLabel.text = "Я там был?"
-            cell.valueLabel.text = restourant!.isVisited ? "Да" : "Нет"
+            cell.keyLabel.text = "Was I there?"
+            cell.valueLabel.text = restourant!.isVisited ? "Yes" : "No"
         default:
             break
         }
