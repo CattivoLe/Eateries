@@ -18,6 +18,12 @@ class PopularTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: - RefreshControl
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        refreshControl?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        refreshControl?.addTarget(self, action: #selector(getCloudRecords), for: .valueChanged)
+        
         //MARK: - ActivityIndicator Stack
         spinner = UIActivityIndicatorView(style: .whiteLarge)
         spinner.translatesAutoresizingMaskIntoConstraints = false // Не проставлять авто ограничения
@@ -35,14 +41,14 @@ class PopularTableViewController: UITableViewController {
     }
     
     // MARK: - iCloud getData Stack
-    func getCloudRecords() {
+    @objc func getCloudRecords() {
         
+        restaurants = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Restaurant", predicate: predicate)
         
         //let sort = NSSortDescriptor(key: "creationDate", ascending: false)
         //query.sortDescriptors = [sort] // Применить сортировку
-        
         let queryOperation = CKQueryOperation(query: query)
         queryOperation.desiredKeys = ["name"] // Получить данные по ключам
         queryOperation.resultsLimit = 10
@@ -61,6 +67,7 @@ class PopularTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.spinner.stopAnimating()
+                self.refreshControl?.endRefreshing()
             }
         }
         publicDataBase.add(queryOperation)
@@ -95,17 +102,14 @@ class PopularTableViewController: UITableViewController {
                 print("Не удалось загрузить изображение из Icloud")
                 return
             }
-            if let record = record {
-                if let image = record.object(forKey: "image") {
-                    let image = image as! CKAsset
-                    let data = try? Data(contentsOf: image.fileURL)
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.imageView?.image = UIImage(data: data)
-                            self.cache.setObject(image.fileURL as AnyObject, forKey: restaurant.recordID) // Запись в кэш
-                        }
-                    }
-                }
+            guard let record = record else { return }
+            guard let image = record.object(forKey: "image") else { return }
+            let imageAsset = image as! CKAsset
+            
+            guard let data = try? Data(contentsOf: imageAsset.fileURL) else { return }
+            DispatchQueue.main.async {
+                cell.imageView?.image = UIImage(data: data)
+                self.cache.setObject(imageAsset.fileURL as AnyObject, forKey: restaurant.recordID) // Запись в кэш
             }
         }
         publicDataBase.add(fetchRecordOper)
